@@ -1,0 +1,2349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+}
+html{
+    scroll-behavior: smooth;
+}
+.arrow-up{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2;
+}
+.arrow-up a{
+    width: 50px;
+    height: 50px;
+    background: red;
+    text-align: center;
+    display: block;
+    line-height: 50px;
+    border-radius: 50%;
+    transition: .5s;
+    color: white;
+}
+.arrow-up a:hover {
+    background: darkred;
+}
+.logo {
+    white-space: nowrap; 
+}
+.logo img{
+    width: 30px;
+    height: 30px;
+}
+.logo span{
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 24px;
+    font-weight: 700;
+}
+.open{
+    display: flex !important;
+}
+.header1 {
+    display: flex; 
+    justify-content: space-between; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/header.webp');     
+    background-size: cover; 
+    background-position: center; 
+    height: 800px; 
+    padding: 20px 30px; 
+    color: white; 
+}
+.header2 {
+    display: flex; 
+    justify-content: space-between; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/cycling.webp');     
+    background-size: cover; 
+    background-position: center; 
+    height: 420px; 
+    padding: 20px 30px; 
+    color: white; 
+}
+.header3 {
+    display: flex; 
+    justify-content: space-between; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo1.jpg');     
+    background-size: cover; 
+    background-position: bottom center; 
+    height: 420px; 
+    padding: 20px 30px; 
+    color: white; 
+}
+.header4 {
+    display: flex; 
+    justify-content: space-between; 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo4.jpg');
+    background-size: cover; 
+    background-position: center; 
+    height: 420px; 
+    padding: 20px 30px; 
+    color: white; 
+}
+.nav1 {
+    display: none; 
+    font-family: 'Geologica', sans-serif;
+    font-size: 20px;
+    padding: 50px 40px;
+    background-color: rgba(48, 48, 48, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    overflow-y: auto;
+}
+.nav1 ul {
+    list-style: none;
+    flex-direction: column;
+    display: flex;
+    justify-content: start;
+    gap: 10px; 
+    padding: 0;
+}
+.nav1 ul li {
+    margin: 0; 
+    padding: 0; 
+}
+.nav1 img {
+    width: 24px;
+    height: 24px;
+}
+.nav1 a {
+    text-decoration: none; 
+    color: white; 
+    background: linear-gradient(red 0 0) 0 100% /var(--t,0)
+    2px no-repeat;
+    transition: .5s;
+}
+.nav1 a:hover,
+.nav1 a.active {
+    font-weight: bolder;
+    --t: 100%;
+}
+.nav1 ul li a {
+    white-space: nowrap;
+}
+.menu-icon{
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+.menu-icon span{
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: white;
+}
+.menu-icon::before, .menu-icon::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease 0s;
+}
+.menu-icon::before{
+    top: 0;
+}
+.menu-icon::after{
+    bottom: 0;
+}
+.menu-icon.active span {
+    transform: scale(0);
+}
+.menu-icon.active::before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.menu-icon.active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+.menu-icon{
+    display: flex;
+}
+.title1 {
+    position: absolute;
+    top: 60px;
+    left: auto;
+    max-width: 500px;
+    text-align: center;
+    height: 800px;
+    padding: 60px 0;
+}
+.title1 h1 {
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+}
+.title1 p {
+    position: relative;
+    top: 30px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+.title2,
+.title3,
+.title4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -200px;
+    margin-left: -70px;
+    max-width: 500px;
+    text-align: center;
+    height: 800px;
+}
+.title2 h1,
+.title3 h1,
+.title4 h1 {
+    font-size: 60px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+}
+.learn-more {
+    position: relative;
+    top: 130px;
+    width: 230px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease; 
+}
+.learn-more:hover {
+    background-color: #ef464e;
+    width: 235px;
+    height: 55px;
+    box-shadow: 0 0 10px rgba(239, 70, 78, 0.7), 0 0 20px rgba(239, 70, 78, 0.7);  
+    transform: scale(1.05);
+}
+.banner-button:hover {
+    background-color: #ef464e;
+    width: 235px;
+    height: 55px;
+    box-shadow: 0 0 10px rgba(239, 70, 78, 0.7), 0 0 20px rgba(239, 70, 78, 0.7);  
+    transform: scale(1.05);
+}
+.banner-button {
+    background-color: red; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    width: 230px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 50px;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    transition: all 0.3s ease; 
+}
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/studio.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    height: 480px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.banner-content {
+    padding: 20px;
+}
+.banner h2 {
+    font-size: 35px; 
+    font-weight: 800;
+    max-width: 700px;
+    margin-bottom: 30px;
+    margin-top: -40px;
+    text-align: center;
+    font-family: 'Geologica', sans-serif;
+}
+.banner p {
+    font-size: 16px; 
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+}
+@keyframes burgerAnimation {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 2;
+    }
+}  
+.info {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    background-color: #000;
+    padding: 60px;
+    gap: 30px; 
+}
+.info-item {
+    text-align: center; 
+    width: 250px;
+    padding: 20px;
+}
+.info-item h3 {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 700;
+    margin: 15px 0;
+}
+.info-item p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+.icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px; 
+    background-image: url('../images/sprites.png'); 
+    background-repeat: no-repeat;
+    background-size: 60px 60px; 
+    background-color: white;
+    border-radius: 50%; 
+}
+.icons {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px; 
+    background-image: url('../images/sprites4.png'); 
+    background-repeat: no-repeat;
+    background-size: 60px 60px; 
+    background-color: white;
+    border-radius: 50%; 
+}
+.icon-equipment {
+    background-position: 5px 5px; 
+    background-size: 90px;
+    background-color: white;
+    border-radius: 50%;
+}
+.icon-pool {
+    background-position: -40px 12px; 
+    background-size: 90px;
+    background-color: white;
+    border-radius: 50%;
+}
+.icon-training {
+    background-position: 10px -40px; 
+    background-size: 90px;
+    background-color: red;
+    border-radius: 50%;
+}
+.icon-group-training{
+    background-position: 5px 5px; 
+    background-size: 100px;
+    background-color: white;
+    border-radius: 50%;
+}
+.icon-personal-training{
+    background-position: 10px -40px;
+    background-size: 100px;
+    background-color: white;
+    border-radius: 50%;
+}
+.icon-children {
+    background-position: -45px 5px; 
+    background-size: 100px;
+    background-color: white;
+    border-radius: 50%;
+}
+.class-cardio {
+background-image: url('../images/classes1.jpg');
+}
+.class-weight {
+background-image: url('../images/classes2.jpg');
+}
+.class-boxing {
+background-image: url('../images/classes3.jpg');
+}
+.classes h2 {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.classes p{
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    font-size: 15px;
+    margin-bottom: 40px;
+    color: #b5b5b5;
+}
+.classes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 40px; 
+    justify-items: center; 
+}
+.class-item {
+    width: 250px; 
+    height: 250px; 
+    background-size: cover; 
+    background-position: center; 
+    position: relative; 
+    overflow: hidden; 
+}
+.class-info {
+    position: absolute;
+    bottom: 10px; 
+    left: 10px; 
+    color: white; 
+    padding: 10px; 
+    display: flex;
+    align-items: center; 
+}
+.class-info span {
+    font-family: 'Geologica', sans-serif;
+    width: 18px;
+    height: 18px;
+    font-weight: bold;
+    color: red;
+}  
+.testimonial-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin-top: 200px;
+}
+.testimonial-image {
+    background-image: url('../images/trainer1.png'); 
+    background-size: cover;
+    background-position: center;
+    width: 350px;
+    height: 350px;
+    position: relative;
+    top: -150px;
+    left: 10px;
+}
+.testimonial-content {
+    text-align: center;
+    margin-right: 35px;
+    margin-top: -250px;
+}
+.quote-icon {
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 800;
+    color: red;
+    display: inline-block;
+    margin-bottom: 20px; 
+}
+.testimonial-text {
+    font-family: 'Geologica', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+.testimonial-author {
+    font-family: 'Geologica', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.testimonial-role {
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+} 
+.video-section {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    height: 60vw; 
+    max-height: 600px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../images/gym.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play-button {
+    width: 10vw; 
+    height: 10vw;
+    max-width: 60px; 
+    max-height: 60px;
+    background-color: rgba(255, 0, 0, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.play-button:hover {
+    transform: scale(1.1);
+}
+.play-button::before {
+    content: '';
+    display: inline-block;
+    border-style: solid;
+    border-width: 12px 0 12px 18px; 
+    border-color: transparent transparent transparent white;
+    margin-left: 8px; 
+    border-radius: 2px; 
+}
+.trainers {
+    text-align: center;
+    padding: 120px 20px 50px 20px;
+    color: white;
+}
+.trainers h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    font-family: 'Geologica', sans-serif;
+}
+.trainers .description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    max-width: 300px;
+    margin: 0 auto 30px;
+}
+.trainer-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    align-items: flex-end;
+}
+.trainer {
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+}
+.trainer-photo {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+.trainer1 {
+    background-image: url('../images/trainer2.png');
+    width: 516px;
+    height: 516px;
+    position: relative;
+    left: -210px;
+}
+.trainer2 {
+    background-image: url('../images/trainer3.png');
+    width: 560px;
+    height: 561px;
+    position: relative;
+    left: -500px;
+}
+.trainer3 {
+    background-image: url('../images/trainer4.png');
+    width: 516px;
+    height: 516px;
+    position: relative;
+    right: -70px;
+    position: relative;
+}
+.trainer h3 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+    margin: 10px 0 5px;
+    white-space: nowrap; 
+}
+.trainer p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.icon1 {
+    width: 24px;
+    height: 24px;
+    background-image: url('../images/sprites2.png');
+    background-size: 72px 24px;
+    background-color: red;
+    border-radius: 50%;
+}
+.icon1.facebook {
+    background-position: -28px 0;
+}
+.icon1.twitter {
+    background-position: -90px -2px;
+    background-size: 120px 40px;
+}
+.icon1.instagram {
+    background-position: -3px 0;
+}
+.image-container {
+    flex: 1;
+    height: 250px;
+    width: 250px; 
+    background-image: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), 
+    url('../images/muscles.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.image-block{
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+    height: 250px;
+    width: 250px; 
+}
+.info-block {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+}
+.content {
+    flex: 1;
+    margin: 0 0 15px 0;
+    width: 320px;
+    text-align: center;
+}
+.content h2 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+.stats {
+    display: flex;
+    gap: 50px;
+    column-gap: 100px;
+    flex-wrap: wrap;
+}
+.stat-item {
+    text-align: center;
+}
+.stat-item .number {
+    font-family: 'Geologica', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #e50914;
+}
+.stat-item .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #ccc;
+    margin-left: 10px;
+}
+.footer {
+    flex-direction: column; 
+    align-items: center;  
+    text-align: center;
+    margin-right: 60px;
+    background-color: #000;
+    color: white;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.footer .logo {
+    text-align: center;
+    margin-top: -300px;
+    margin-bottom: 50px;
+    font-size: 28px;
+}
+.footer-section.newsletter {
+    margin-top: 130px;
+    max-width: 272px;
+}
+.footer-section.opening-hours{
+    max-width: 179px;
+}
+.opn-hrs {
+    margin-top: 300px;
+}
+.footer-section.locations{
+    margin-top: 30px;
+    max-width: 320px;
+}
+.footer h3 {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.footer p, .footer a {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: white;
+}
+.footer-logo {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+}
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+.newsletter-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+}
+.newsletter-form input::placeholder {
+    color: #999;
+}
+.newsletter-form button {
+    background-image: url('../images/send.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+.privacy-policy {
+    font-family: 'Inter', sans-serif;
+    margin-top: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #999;
+}
+.privacy-policy input {
+    margin-right: 5px;
+}
+.privacy-policy a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.privacy-policy a:hover {
+    color: white;
+}
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+.custom-checkbox {
+    display: inline-block;
+    cursor: pointer;
+}
+.custom-checkbox .checkmark {
+    display: inline-block;
+    width: 18px; 
+    height: 18px; 
+    border-radius: 3px; 
+    background-color: #000; 
+    border: 2px solid #808080;
+    box-sizing: border-box;
+    position: relative;
+}
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✔'; 
+    position: absolute;
+    left: -1px;
+    top: -5px;
+    font-size: 18px;
+    color: white; 
+}
+.opening-hours p {
+    margin-bottom: 15px;
+}
+.opening-hours p strong {
+    font-family: 'Geologica', sans-serif;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.opening-hours .time {
+    font-family: 'Inter', sans-serif;
+    display: block;
+    color: white;
+    opacity: 0.8;
+    font-weight: normal; 
+}
+.locations p {
+    margin-bottom: 15px;
+}
+.locations p strong {
+    font-family: 'Geologica', sans-serif;
+    display: block;
+    font-weight: 700;
+}
+.locations .address {
+    display: block;
+    margin-top: 5px; 
+    font-family: 'Inter', sans-serif;
+    font-weight: normal; 
+    color: white;
+    opacity: 0.8;
+}
+.copyright {
+    font-family: 'Geologica', sans-serif;
+    text-align: left;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+    opacity: 0.7;
+    margin-left: 50px;
+} 
+.contact-form-section {
+    background-color: #000;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+.contact-form-section h2 {
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.contact-form-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    margin-bottom: 60px;
+    color: #aaa;
+}
+.contact-form {
+    max-width: 1296px;
+    margin: 0 auto;
+}
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.form-group label {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 7px;
+    text-align: left;
+}
+.form-group input,
+.form-group textarea {
+    font-family: 'Inter', sans-serif;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: #fff;
+    color: #333;
+}
+.form-group textarea {
+    resize: none;
+    height: 286px;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+.submit-button {
+    font-family: 'Geologica', sans-serif;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    margin-top: 49px;
+    transition: background-color 0.3s;
+}
+.submit-button:hover {
+    background-color: #ef464e;
+    box-shadow: 0 0 10px rgba(239, 70, 78, 0.7), 0 0 20px rgba(239, 70, 78, 0.7);  
+    transform: scale(1.05);
+}
+.pricing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+.pricing-info h2 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    max-width: 400px;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+.feature-list {
+    margin-top: 20px;
+}
+.paragraph-container {
+    display: flex;
+    gap: 20px; 
+}
+.paragraph {
+    display: flex;
+    flex-direction: column;
+    max-width: 208px; 
+}
+.feature {
+    display: flex;
+    align-items: start;
+    margin-bottom: 20px;
+    width: 500px;
+}
+.checkmark {
+    width: 20px;
+    height: 20px;
+    color: white;
+    margin-left: 35px;
+}
+.feature-content h3 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    margin-left: -70px;
+}
+.feature-content p {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #ccc;
+    flex-wrap: wrap;
+    max-width: 415px; 
+}
+.pricing-cards {
+    display: flex;
+    gap: 20px;
+}
+.pricing-card {
+    background-color: #fff;
+    color: #000;
+    padding: 30px;
+    width: 200px;
+    height: 350px;
+    text-align: center;
+}
+.dark-card {
+    background-color: #0F0F0F;
+    color: #fff;
+    width: 180px;
+    height: 300px;
+}
+.pricing-card h3 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 0;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.price {
+    font-family: 'Geologica', sans-serif;
+    font-size: 20px;
+    color: #e50914;
+    margin: 15px 0;
+}
+.benefits {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+.benefits li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #e50914;
+}
+.benefits span {
+    font-family: 'Geologica', sans-serif;
+    font-size: 12px;
+}
+.benefits-span1{
+    color: black;
+}
+.benefits-span2{
+    color: white;
+}
+.btn {
+    background-color: red;
+    width: 110px;
+    height: 40px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.btn:hover {
+    background-color: #ef464e;
+    box-shadow: 0 0 10px rgba(239, 70, 78, 0.7), 0 0 20px rgba(239, 70, 78, 0.7);  
+    transform: scale(1.05);
+}
+.classes-photo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+.classes-photo h2{
+    font-family: 'Geologica', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+}
+.classes-photo p {
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    width: 300px;
+    font-size: 16px;
+}
+.class-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+    width: 400px;
+    height: 1200px;
+    justify-items: center; 
+}
+.class-card {
+    position: relative;
+    top: 25px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+}
+.class-card h3 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 23px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.class-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    width: 150px;
+    margin: 0 auto;
+}
+.text-content{
+    position: relative;
+    top: 150px;
+}
+.cardio {
+    background-image: url('../images/classes1.jpg');
+    width: 180px;
+    height: 180px;
+}
+.weight-training {
+    background-image: url('../images/classes2.jpg');
+    width: 180px;
+    height: 180px;
+}
+.crossfit {
+    background-image: url('../images/crossfit.jpg');
+    width: 180px;
+    height: 180px;
+}
+.boxing {
+    background-image: url('../images/classes3.jpg');
+    width: 180px;
+    height: 180px;
+}
+.yoga {
+    background-image: url('../images/photo1.jpg');
+    width: 180px;
+    height: 180px;
+}
+.cycling {
+    background-image: url('../images/cycling.webp');
+    width: 180px;
+    height: 180px;
+}
+.class-container > div:nth-child(2n) {
+    margin-top: 50px;
+}
+.timetable-section {
+    text-align: center;
+    color: #fff;
+    padding: 60px 0;
+    background-color: #000;
+}
+.timetable-section h2 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.timetable-section p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #ccc;
+    max-width: 500px;
+    margin: 15px auto 40px;
+}
+.timetable-table {
+    width: 1296px;
+    height: 672px;
+    border-collapse: collapse;
+    background-color: #101010;
+    margin: 0 auto;
+    table-layout: fixed; 
+}
+.timetable-table th, .timetable-table td {
+    border: 3px solid #444;
+    width: 162px;
+    height: 112px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+}
+thead {
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+}
+.logo-cell {
+    background-color: white;
+    color: #000;
+    position: sticky;
+    left: 0;
+    z-index: 2; 
+}
+.time-slot {
+    background-color: #e50914;
+    color: #fff;
+    font-family: 'Geologica', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    position: sticky;
+    left: 0;
+    z-index: 2; 
+}
+.class-cell {
+    background-color: black;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: bold;
+}
+.class-cell span {
+    display: block;
+    color: #FFFFFF;
+    font-size: 14px;
+    margin-top: 5px;
+    font-weight: normal;
+}
+.table-wrapper {
+    overflow-x: auto; 
+}
+.info-section {
+    display: flex;
+    flex-direction: column;
+    height: 990px;
+    background-color: #000;
+    padding: 20px 20px;
+    color: white;
+}
+.info-block {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.info-image {
+    background-size: cover;
+    background-position: center;
+}
+.coach-image {
+    width: 260px;
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),  url('../images/coach.webp');
+}
+.training-image {
+    margin-top: -710px;
+    width: 260px;
+    height: 200px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/training.jpg');
+}
+.info-content {
+    text-align: center;
+    max-width: 526px;
+    margin-bottom: 250px;
+}
+.info-content h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+}
+.info-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: #999;
+}
+.info-btn1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 60px;
+    width: 230px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease; 
+}
+.info-btn1:hover {
+    background-color: #ef464e;
+    width: 235px;
+    height: 55px;
+    box-shadow: 0 0 10px rgba(239, 70, 78, 0.7), 0 0 20px rgba(239, 70, 78, 0.7);  
+    transform: scale(1.05);
+}
+.info-btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 60px;
+    width: 175px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease; 
+}
+.info-btn2:hover {
+    background-color: #ef464e;
+    width: 180px;
+    height: 55px;
+    box-shadow: 0 0 10px rgba(239, 70, 78, 0.7), 0 0 20px rgba(239, 70, 78, 0.7);  
+    transform: scale(1.05);
+}
+.video-overlay {
+    position: relative;
+    width: 100%; 
+    max-width: 1296px;
+    height: min(68vw, 680px); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../images/personal.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto; 
+}
+.video-swim {
+    position: relative;
+    width: 100%; 
+    max-width: 1296px;
+    height: min(60vw, 600px); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('../images/swim.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;    
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto; 
+}
+.personal-training .training-content h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-family: 'Geologica', sans-serif;
+    text-align: center;
+}
+.personal-training .training-content p {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 500px;
+    margin: 0 auto 50px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+.coach-section {
+    padding: 40px 120px;
+    color: white;
+    text-align: left;
+}
+.coach-section h2 {
+    font-size: 22px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+}
+.coach-container-description {
+    display: flex; 
+    gap: 40px; 
+    align-items: flex-start; 
+}
+.coach-container {
+    display: flex;
+    gap: 58px;
+    flex-direction: column;
+    align-items: center;
+}
+.coach {
+    text-align: center;
+    margin-left: -40px;
+}
+.profile-photo {
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-top: 30px;
+    width: 84px;
+    height: 84px;
+}
+.coach1 {
+    background-image: url('../images/trainer2.png');
+    background-color: red;
+}
+.coach2 {
+    background-image: url('../images/trainer1.png');
+    background-color: white;
+    margin-top: -30px;
+}
+.coach3 {
+    background-image: url('../images/trainer5.png');
+    background-position: top;
+    background-color: white;
+    margin-top: -30px;
+}
+.coach p {
+    font-size: 16px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    margin: 8px 0 0 0; 
+}
+.coach span {
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: normal;
+}
+.coach-description {
+    max-width: 856px;
+    margin-top:  25px;
+    margin-left: 30px;
+    line-height: 2
+}
+.coach-description p {
+    color: #ccc;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+}
+.navigation {
+    display: flex;
+    gap: 40px;
+    margin-top: 60px;
+}
+.nav-btn {
+    width: 40px;
+    height: 40px;
+    background: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: normal;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid #FFFFFF;
+}
+.aboutgym {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 120px; 
+}
+.aboutgym h2 {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+    max-width: 636px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.aboutgym p {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: wrap; 
+    font-size: 20px;
+    max-width: 590px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+    color: #b5b5b5;
+    text-align: center; 
+}
+.aboutgym .classes-grid{
+    margin-top: 150px;
+}
+.aboutgym .classes-grid h3{
+  position: absolute;
+  bottom: 60px;
+  left: 40px;
+  width: 160px;
+  font-size: 29px;
+  font-family: 'Geologica', sans-serif;
+  text-align: center;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.class-modern-equipment {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/modern.jpg');
+}
+.class-individual-approach {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/individual.jpg');
+}
+.class-expert-coaches {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/expert.jpg');
+}
+.swimming-content h2 {
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    max-width: 390px; 
+    text-align: center;
+    margin: 60px auto 28px; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+.swimming-content p {
+    font-size: 16px;
+    color: #ccc;
+    max-width: 380px; 
+    margin: 0 auto 50px; 
+    font-family: 'Inter', sans-serif;
+    text-align: center; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+.gallery-section {
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+}
+.gallery-section h2 {
+    font-size: 50px;
+    margin-bottom: 28px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+}
+.gallery-section p {
+    font-size: 16px;
+    margin: 0 auto 60px;
+    color: #aaa;
+    max-width: 661px;
+    font-family: 'Inter', sans-serif;
+    text-align: center; 
+}    
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; 
+}
+.gallery-item {
+    width: 380px;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+}
+.gallery-item1 {
+    background-image: url('../images/gallery1.jpg');
+}
+
+.gallery-item2 {
+    background-image: url('../images/gallery2.jpg');
+}
+
+.gallery-item3 {
+    background-image: url('../images/gallery3.jpg');
+}
+.team-section {
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    height: 3400px;
+}
+.team-section h2 {
+    font-size: 50px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+    margin: 10px 0 28px;
+}
+.team-section p {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto 60px;
+}
+.team-member h3 {
+    font-size: 28px;
+    font-weight: 600;
+    max-width: 220px;
+    font-family: 'Geologica', sans-serif;
+    margin: 10px 0 28px;
+}
+.team-member p {
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0 0 20px;
+}
+.team {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: -80px;
+    margin-top: -100px;
+    gap: 40px;
+    justify-content: center;
+    width: 1296px;
+}
+.team-member {
+    position: relative;
+    width: 636px;
+    height: 450px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.team-member:nth-child(odd) {
+    margin-top: 120px; 
+}
+.member-image {
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+.trainer-one {
+    background-image: url('../images/trainer2.png');
+    background-position: -90px;
+}
+.trainer-two {
+    background-image: url('../images/trainer3.png');
+    background-position: -100px;
+}
+.trainer-three {
+    background-image: url('../images/trainer9.png');
+    background-position: -100px;
+}
+.trainer-four {
+    background-image: url('../images/trainer6.png');
+    background-position: -80px;
+}
+.trainer-five {
+    background-image: url('../images/trainer10.png');
+    background-position: -120px;
+}
+.trainer-six {
+    background-image: url('../images/trainer4.png');
+    background-position: -60px;
+}
+.social-icon {
+    position: absolute;
+    top: 10px; 
+    right: 130px; 
+    display: flex;
+    flex-direction: column; 
+    width: 24px;
+    height: 24px;
+    column-gap: 50px;
+    background-color: red;
+    border-radius: 50%;
+    background-image: url('../images/sprites2.png');
+    background-size: 72px 24px; 
+}
+.social-icon.facebook-team {
+    background-position: -3px 0;
+    margin-top: 50px;
+}
+.social-icon.twitter-team {
+    background-position: -28px 0;
+}
+.social-icon.instagram-team {
+    background-position: 29px -5px;
+    margin-top: 25px;
+    background-size: 120px;
+}
+.contacts {
+    display: flex;
+    gap: 10px;
+    padding: 40px;
+    background-color: #000;
+    color: #fff;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+.location {
+    flex: 1 1 calc(50% - 14px); 
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin-bottom: 20px; 
+    margin-left: 30px;
+    margin-right: 30px; 
+}
+.location h3 {
+    font-family: 'Geologica', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    margin-top: 100px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.image-container1 {
+    width: 380px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+}
+.new-york {
+background-image: url('../images/gym1.jpg');
+}
+.los-angeles {
+background-image: url('../images/losangeles.jpg');
+}
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+}
+.address {
+    grid-column: span 2; 
+}
+.info-item1 {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    color: #ccc;
+}
+.contact-icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url('../images/sprites3.png');
+    background-repeat: no-repeat;
+    background-size: 50px; 
+}
+.email-icon {
+    background-position: -26px 0;
+}
+.phone-icon {
+    background-position: 2px -23px;
+}
+.address-icon {
+  background-position: 0 -3px;
+}
+.info-item1 p {
+    flex-basis: 100%;
+    margin: -5px 0 0;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+.info-item1 span {
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    color: #fff;
+}
+.latest-news {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+.latest-news h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-family: 'Geologica', sans-serif;
+}
+.latest-news p {
+    font-size: 16px;
+    color: #999;
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+}
+.blog-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
+    justify-content: space-between; 
+}
+.blog-item {
+    display: flex;
+    flex-direction: row; 
+    width: 636px; 
+    border-radius: 5px;
+    overflow: hidden;
+}
+.blog-image {
+    width: 306px; 
+    height: 241px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 30px;
+}
+.image1 {
+    background-image: url('../images/photo1.jpg');
+}
+.image2 {
+    background-image: url('../images/photo22.jpg');
+}
+.blog-content {
+    width: 306px; 
+    padding: 90px 20px;
+}
+.blog-date {
+    font-family: 'Geologica', sans-serif;
+    font-size: 16px;
+    color: #999;
+}
+.blog-content h3 {
+    font-family: 'Geologica', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 20px 0;
+    cursor: pointer;
+    color: white;
+}
+.read-more {
+    font-family: 'Geologica', sans-serif;
+    color: red;
+    font-size: 16px;
+    font-weight: 700;
+}
+.read-more:hover {
+    font-size: 18px;
+}    
+@media (min-width: 900px) {
+    .header1, .header2, .header3, .header4 {
+        display: flex;
+        padding: 10px 60px; 
+        align-items: flex-start;
+    }
+    .menu-icon{
+        display: none;
+    }
+    .header1 .logo,
+    .header2 .logo,
+    .header3 .logo,
+    .header4 .logo {
+        position: fixed;
+        z-index: 1000;
+    }
+    .header2 h1,
+    .header3 h1,
+    .header4 h1 {
+        position: absolute;  
+        top: 30%;           
+        left: 50%;          
+        transform: translate(-50%, -50%); 
+        margin: 0;  
+    }
+    .logo span {
+        margin-top: 20px; 
+        margin-right: 400px;
+    }
+    .logo{
+        display: flex;
+        align-items: center; 
+        gap: 10px; 
+    }
+    .logo img{
+        width: 40px;
+        height: 40px;
+    }
+    .nav1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        overflow: hidden;
+        margin-top: -320px;
+        margin-left: 250px;
+    }
+    .nav1 ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+    .nav1 ul li:nth-last-child(3) {
+        margin-right: 360px; 
+    }
+    .nav1 img {
+        width: 20px;
+        height: 20px;
+    }    
+    .title1 {
+        position: absolute;
+        top: 60px;
+        left: 60px;
+        max-width: 800px;
+        text-align: left;
+        height: 800px;
+        padding: 60px 0;
+    }
+    .title1 h1 {
+        font-size: 70px;
+        font-weight: 600;
+        font-family: 'Geologica', sans-serif;
+    }
+    .title1 p {
+        position: relative;
+        top: 30px;
+        font-size: 16px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+    }
+    .learn-more {
+        position: relative;
+        top: 130px;
+        width: 230px;
+        height: 50px;
+        background-color: red;
+        color: white;
+        font-size: 20px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        border: none;
+    }
+    .info {
+        display: flex;
+        justify-content: space-around;
+        background-color: #000;
+        padding: 60px 72px;
+        color: white;
+    }
+    .info-item {
+        text-align: left;
+        width: 280px;
+    }
+    .icon {
+        position: relative;
+        top: 50px;
+        left: -170px;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        background-image: url('../images/sprites.png'); 
+        background-size: 60px 60px; 
+    }
+    .icons {
+        position: relative;
+        top: 50px;
+        left: -170px;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        background-image: url('../images/sprites4.png'); 
+        background-size: 60px 60px; 
+    }
+    .icon-equipment {
+        background-position: 5px 5px; 
+        background-size: 90px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .icon-pool {
+        background-position: -40px 12px; 
+        background-size: 90px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .icon-training {
+        background-position: 10px -40px; 
+        background-size: 90px;
+        background-color: red;
+        border-radius: 50%;
+    }
+    .icon-group-training{
+        background-position: 5px 5px; 
+        background-size: 100px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .icon-personal-training{
+        background-position: 10px -40px; 
+        background-size: 100px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .icon-children {
+        background-position: -45px 5px; 
+        background-size: 100px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .classes {
+        text-align: center;
+        padding: 50px 20px;
+    }
+    .classes h2 {
+        font-size: 36px;
+    }
+    .classes p {
+        font-size: 18px;    
+    }
+    .classes-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+    }
+    .class-item {
+        width: 416px;
+        height: 416px;
+    }
+    .class-info {
+        position: absolute;
+        bottom: 10px;
+        left: 15px;
+        right: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: calc(100% - 40px);
+    }
+    .class-info h3 {
+        font-family: 'Geologica', sans-serif;
+        font-weight: 600;
+        font-size: 24px;
+    }
+    .class-info span {
+        width: 24px;
+        height: 24px;
+    }   
+    .testimonial-section{
+        height: 874px;
+        margin-top: 0;
+    }
+    .testimonial-image {
+        margin-left: 50px;
+        width: 694px;
+        height: 694px;
+        position: relative;
+        top: 0;
+        left: -90px;
+    }
+    .testimonial-content {
+        width: 578px;
+        height: 399px;
+        text-align: center;
+        margin-top: 0;
+    }
+    .quote-icon {
+        font-size: 100px;
+    }
+    .testimonial-text{
+        font-size: 28px;
+    }
+    .testimonial-author{
+        font-size: 20px;
+        margin-top: 50px;
+        margin-bottom: 15px;
+    }
+    .testimonial-role {
+        font-size: 16px;
+    }
+    .trainers h2 {
+        font-size: 50px;
+    }
+    .trainers .description {
+        max-width: 500px;
+    }
+    .info-block {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 50px;
+        height: 816px;
+        margin: auto;
+        background-color: #000;
+    }
+    .image-container {
+        height: 636px;
+        width: 636px; 
+    }
+    .image-block{
+        height: 636px;
+        width: 636px; 
+    }
+    .content {
+        text-align: left;
+        width: 510px;
+        margin: 0;
+    }
+    .content h2 {
+        font-size: 50px;
+    }
+    .content p {
+        font-size: 16px;
+    }
+    .stat-item .number {
+        font-size: 60px;
+    }
+    .stat-item .label {
+        font-size: 24px;
+        margin-left: 20px;
+    }
+    .banner h2 {
+        font-size: 50px;
+    }
+    .footer {
+        flex-direction: row; 
+        text-align: left;
+    }
+    .opening-hours {
+        margin-top: 120px;
+    }
+    .footer-section.locations {
+        margin-top: 170px;
+    }
+    .footer-section .logo{
+        position: relative;
+        top: 220px;
+    }
+    .submit-button {
+        width: 416px;
+        margin-top: 49px;
+    }
+    .form-row {
+        display: flex;
+        flex-direction: row;
+    }
+    .footer-section.newsletter {
+        margin-left: 60px;
+    }
+    .cardio,
+    .weight-training,
+    .crossfit,
+    .boxing,
+    .yoga,
+    .cycling {
+        width: 636px;
+        height: 636px;
+    }
+    .class-container{
+        width: 1296px;
+        height: 2604px;
+    }
+    .classes-photo h2{
+        font-size: 50px;
+    }
+    .classes-photo p {
+        width: 600px;
+    }
+    .class-card h3 {
+        font-size: 28px;
+    }
+    .class-card p {
+        font-size: 15px;
+        width: 306px;
+        margin: 0 auto;
+    }
+    .text-content{
+        top: 130px;
+    }
+    .timetable-section h2 {
+        font-size: 50px;
+    }
+    .pricing-section {
+        display: flex;
+        flex-direction: row;
+        padding: 120px;
+        text-align: left;
+    }
+    .pricing-info h2 {
+        font-size: 50px;
+        font-weight: 600;
+        max-width: 636px;
+        margin-top: 60px;
+        margin-left: 0;
+    }
+    .pricing-card {
+        width: 306px;
+        height: 506px;
+    } 
+    .dark-card {
+        width: 306px;
+        height: 426px;
+    }
+    .pricing-card h3 {
+        font-size: 24px;
+        margin-top: 25px;
+    }
+    .price {
+        font-size: 41px;
+        margin: 30px 0;
+    }
+    .benefits span {
+        font-size: 16px;
+    }
+    .btn {
+        width: 210px;
+        height: 50px;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 35px;
+    }
+    .checkmark {
+        margin-left: 0;
+    } 
+    .feature-content h3 {
+        margin-left: 0;
+    }
+    .info-block {
+        column-gap: 240px;
+    }
+    .coach-image {
+        width: 526px;
+        height: 565px;
+    } 
+    .training-image {
+        margin-top: 0;
+        width: 526px;
+        height: 360px;
+    }
+    .info-content h3 {
+        font-size: 50px;
+    }
+    .info-content p {
+        font-size: 16px;
+    }
+    .info-section {
+        height: 1165px;
+    }
+    .info-content {
+        text-align: left;
+        margin-bottom: 0;
+    }
+    .personal-training .training-content h2 {
+        font-size: 50px;
+    }
+    .coach {
+        margin-left: 0;
+    }
+    .coach-section h2 {
+        font-size: 28px;
+    }
+    .coach-container {
+        flex-direction: row;
+    }
+    .coach-description p {
+        font-size: 20px;
+        text-align: left;
+    }
+    .aboutgym .classes-grid h3{
+        position: absolute;
+        bottom: 150px;
+        left: 110px;
+      }
+    .swimming-content h2{
+        font-size: 50px;
+        max-width: 660px;
+    }
+    .swimming-content p{
+        max-width: 510px;
+    }
+    .gallery-item {
+        width: 480px;
+        height: 480px;
+    }
+    .gallery{
+        gap: 0;
+    }
+    .team{
+        grid-template-columns: repeat(2, 1fr); 
+        margin: 0;
+    }
+    .member-image {
+        width: 636px;
+        height: 636px;
+    }
+    .team-member {
+        height: 724px;
+    }
+    .team-section{
+        padding: 60px 20px;
+        height: 2871px;
+    }
+    .trainer-one {
+    background-position: -100px;
+    }
+    .trainer-two {
+        background-position: -170px;
+    }
+    .trainer-three {
+        background-position: -150px;
+    }
+    .trainer-four {
+        background-position: -120px;
+    }
+    .trainer-five {
+        background-position: -220px;
+    }
+    .trainer-six {
+        background-position: -100px;
+    }
+    .team-section p {
+        max-width: 500px;
+    }
+    .social-icon {
+        top: 10px; 
+        right: 10px; 
+    }
+    .location {
+        max-width: 600px;
+    }
+    .image-container1 {
+        width: 636px;
+        height: 420px;
+    }
+    .latest-news {
+        padding: 100px 120px 10px;
+    }
+
+}
+@media (min-width: 1920px) {
+    .logo{
+        margin-left: 200px;
+    }
+    .timetable-section .logo{
+        margin-left: 10px;
+        margin-top: -15px;
+    }
+    .info-block{
+        margin-left: 150px;
+    }
+    .classes-grid{
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+    .gallery-item {
+        width: 640px;
+        height: 480px;
+    }
+    .info {
+        padding: 60px 300px;
+    }
+    .team-section{
+        margin-left: 300px;
+    }
+    .footer-section.locations{
+        margin-right: 300px;
+    }
+    .footer-section.newsletter{
+        margin-left: 300px;
+    }
+    .copyright{
+        margin-left: 300px;
+    }
+    .title1{
+        margin-left: 150px;
+    }
+    .pricing-section{
+        margin-left: 150px;
+    }
+    .info-section{
+        margin-left: 90px;
+    }
+    .coach-section{
+        margin-left: 190px;
+    }
+    .latest-news {
+        margin-left: 190px;
+        margin-right: 190px;
+    }
+}
