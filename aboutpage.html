@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="https://kit.fontawesome.com/307576ca98.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link rel="stylesheet" href="styles/style.css">
     <title>About Us</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
   
@@ -18,14 +21,12 @@
   </div>
 
    <header class="header3">
-       <div class="logo">
+    <div class="burger-menu">
+      <a href="index.html"><div class="logo">
            <img src="images/logo.png" alt="logo">
            <span>Fitness</span>
        </div>
-
-       <div class="title3">
-           <h1>About Us</h1>
-       </div>
+      </a>
 
        <nav class="nav1">
           <ul>
@@ -33,10 +34,19 @@
               <li><a href="servicespage.html">Services</a></li>
               <li><a href="aboutpage.html">About Us</a></li>
               <li><a href="contactpage.html">Contact Us</a></li>
-              <li><img src="images/search.png" alt="Search"></li>
-              <li><img src="images/user.png" alt="User"></li>
           </ul>
+          <a href="search.html" class="search">
+          <img src="images/search.png" alt="Search">
+          </a>
+          <a href="http://localhost/login/index.php" target="_blank" class="user">
+            <img src="images/user.png" alt="User">
+          </a>
        </nav>
+      </div>
+
+      <div class="title3">
+        <h1>About Us</h1>
+    </div>
 
     <div class="menu-icon">
         <span></span>
@@ -46,23 +56,23 @@
    <main>
 
     <section class="aboutgym">
-      <h2>Every day is a chance to become better</h2>
-      <p>Quam lacus at est mi. Non mattis neque sem nibh diam eu ac. Vitaesed ultrices commodo nec. Faucibus laoreet sagittis habitasse consequat. Quam vulputate tincidunt nam laoreet massa  Nascetur sapien erat lacus sit mi.</p>
-        <button class="banner-button">Shedule workout</button>
+      <h2 class="animation _anim-item">Every day is a chance to become better</h2>
+      <p class="animation _anim-item">Quam lacus at est mi. Non mattis neque sem nibh diam eu ac. Vitaesed ultrices commodo nec. Faucibus laoreet sagittis habitasse consequat. Quam vulputate tincidunt nam laoreet massa  Nascetur sapien erat lacus sit mi.</p>
+        <button class="banner-button" data-aos="fade-up" data-aos-duration="1000">Shedule workout</button>
       <div class="classes-grid">
-        <div class="class-item class-modern-equipment">
+        <div class="class-item class-modern-equipment"  data-aos="fade-right">
           <div class="class-info">
             <h3>Modern Equipment</h3>
           </div>
         </div>
     
-        <div class="class-item class-individual-approach">
+        <div class="class-item class-individual-approach" data-aos="fade-up">
           <div class="class-info">
             <h3>Individual Approach</h3>
           </div>
         </div>
     
-        <div class="class-item class-expert-coaches">
+        <div class="class-item class-expert-coaches"  data-aos="fade-left">
           <div class="class-info">
             <h3>Expert Coaches</h3>
           </div>
@@ -71,11 +81,11 @@
     </section> 
 
     <section class="team-section">
-      <h2>Team of Professionals</h2>
-      <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
+      <h2  class="animation _anim-item">Team of Professionals</h2>
+      <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
   
       <div class="team">
-          <div class="team-member">
+          <div class="team-member"  data-aos="fade-right">
               <div class="member-image trainer-one"></div>
               <h3>Jimmie Stamm</h3>
               <p>Crossfit Coach</p>
@@ -86,7 +96,7 @@
               </div>
           </div>
   
-          <div class="team-member">
+          <div class="team-member"  data-aos="fade-left">
               <div class="member-image trainer-two"></div>
               <h3>Dana Stamm</h3>
               <p>Fitness Coach</p>
@@ -97,7 +107,7 @@
               </div>
           </div>
 
-          <div class="team-member">
+          <div class="team-member"  data-aos="fade-right">
             <div class="member-image trainer-three"></div>
             <h3>Carole Grant</h3>
             <p>Cardio Workouts</p>
@@ -108,7 +118,7 @@
             </div>
           </div>
 
-          <div class="team-member">
+          <div class="team-member"  data-aos="fade-left">
             <div class="member-image trainer-four"></div>
             <h3>Kristine Casper</h3>
             <p>Boxing</p>
@@ -119,7 +129,7 @@
             </div>
           </div>
 
-          <div class="team-member">
+          <div class="team-member"  data-aos="fade-right">
             <div class="member-image trainer-five"></div>
             <h3>Alicia Kuhic</h3>
             <p>Yoga</p>
@@ -130,7 +140,7 @@
             </div>
           </div>
 
-          <div class="team-member">
+          <div class="team-member"  data-aos="fade-left">
             <div class="member-image trainer-six"></div>
             <h3>Ernesto Walsh</h3>
             <p>Fitness Coach</p>
@@ -147,11 +157,10 @@
 
     <section class="personal-training">
       <div class="swimming-content">
-          <h2>The Largest Indoor 
-            Swimming Pool in the City</h2>
-          <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
+          <h2 class="animation _anim-item">The Largest Indoor Swimming Pool in the City</h2>
+          <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
       </div>
-      <div class="video-swim">
+      <div class="video-swim" data-aos="fade-up">
           <a href="https://youtu.be/gnu4AnI2nqg?si=UUfv8StfSxAYo9FP" target="_blank">
               <div class="play-button"></div>
           </a>
@@ -159,17 +168,17 @@
   </section>
 
     <section class="info">
-      <div class="info-item">
+      <div class="info-item" data-aos="zoom-out-up">
           <div class="icons icon-group-training"></div>
           <h3>Group Training</h3>
           <p>Sodales ullamcorper commodo neque est elit</p>
       </div>
-      <div class="info-item">
+      <div class="info-item" data-aos="zoom-out-up">
           <div class="icons icon-personal-training"></div>
           <h3>Personal Trainings</h3>
           <p>Justo libero lectus nulla eleifend aliquam nascetur sed</p>
       </div>
-      <div class="info-item">
+      <div class="info-item" data-aos="zoom-out-up">
           <div class="icons icon-children"></div>
           <h3>Workouts for Children</h3>
           <p>Massa tortor non elit massa adipiscing diamtiam odioet</p>
@@ -177,54 +186,64 @@
       </section>
     
       <section class="gallery-section">
-        <h2>Our Gallery</h2>
-        <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
+        <h2 class="animation _anim-item">Our Gallery</h2>
+        <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
         <div class="gallery">
-            <div class="gallery-item gallery-item1"></div>
-            <div class="gallery-item gallery-item2"></div>
-            <div class="gallery-item gallery-item3"></div>
+            <div class="gallery-item gallery-item1" data-aos="fade-right"></div>
+            <div class="gallery-item gallery-item2" data-aos="fade-up"></div>
+            <div class="gallery-item gallery-item3" data-aos="fade-left"></div>
         </div>
     </section>
 
    </main>
 
    <footer class="footer">
-    
+
     <div class="footer-section newsletter">
-      <h3>Newsletter Sign Up</h3>
-      <div class="newsletter-form">
+      <h3 class="animation _anim-item">Newsletter Sign Up</h3>
+      <div class="newsletter-form animation-paragraph _anim-item">
         <input type="email" placeholder="Your email address" />
         <button type="submit"></button>
-      </div>
-      <label class="privacy-policy">
+      </div> 
+      <label class="privacy-policy animation-paragraph _anim-item">
         <span class="custom-checkbox">
           <input type="checkbox" />
           <span class="checkmark"></span>
-        </span> I agree to the <a href="#"> Privacy Policy</a>
+        </span>
+        I agree to the <a href="privacy.html">Privacy Policy</a>
       </label>
     </div>
   
     <div class="footer-section opening-hours">
-      <div class="logo">
+      <div class="logo" data-aos="fade-up" data-aos-duration="3000">
           <img src="images/logo.png" alt="logo" class="footer-logo" />
           <span>Fitness</span>
       </div>
       <div class="opn-hrs">
-      <h3>Opening hours</h3>
-      <p><strong>Monday - Saturday</strong><span class="time">08:00 AM - 10:00 PM</span></p>
-      <p><strong>Sunday</strong> <span class="time">10:00 AM - 8:00 PM</span></p>
+      <h3 class="animation _anim-item">Opening hours</h3>
+      <p class="animation-paragraph _anim-item"><strong>Monday - Saturday</strong><span class="time">08:00 AM - 10:00 PM</span></p>
+      <p class="animation-paragraph _anim-item"><strong>Sunday</strong> <span class="time">10:00 AM - 8:00 PM</span></p>
     </div>
     </div>
   
     <div class="footer-section locations">
-      <h3>Locations</h3>
-      <p><strong>New - York</strong> <span class="address">19 North Road Piscataway, NY 08854</span></p>
-      <p><strong>Los - Angeles</strong> <span class="address">9514 Smoky Hollow St. Sulphur, LA 70663</span></p>
+      <h3 class="animation _anim-item">Locations</h3>
+      <p class="animation-paragraph _anim-item"><strong>New - York</strong> <span class="address">19 North Road Piscataway, NY 08854</span></p>
+      <p class="animation-paragraph _anim-item"><strong>Los - Angeles</strong> <span class="address">9514 Smoky Hollow St. Sulphur, LA 70663</span></p>
     </div>
   
     <div class="copyright">
       <p>© Copyright GYM 2024. Design by Figma.guru</p>
     </div>
+
+    <div id="cookie-banner" class="cookie-banner">
+      <p class="cookie-text">
+          We use cookies to give you the best experience. Read our 
+          <a href="privacy.html" class="cookie-policy-link">cookie policy</a>.
+      </p>
+      <button id="accept-cookies" class="cookie-btn">Agree</button>
+  </div>
+
   </footer>    
 
 <script src="js/script.js"></script>
