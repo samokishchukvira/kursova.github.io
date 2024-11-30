@@ -8,9 +8,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/307576ca98.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <title>Contact Us</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
 
@@ -19,25 +22,32 @@
       </div>
       
    <header class="header4">
-       <div class="logo">
-           <img src="images/logo.png" alt="logo">
-           <span>Fitness</span>
-       </div>
+    <div class="burger-menu">
+        <a href="index.html"><div class="logo">
+             <img src="images/logo.png" alt="logo">
+             <span>Fitness</span>
+         </div>
+        </a>
+  
+         <nav class="nav1">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicespage.html">Services</a></li>
+                <li><a href="aboutpage.html">About Us</a></li>
+                <li><a href="contactpage.html">Contact Us</a></li>
+            </ul>
+            <a href="search.html" class="search">
+            <img src="images/search.png" alt="Search">
+            </a>
+            <a href="http://localhost/login/index.php" target="_blank" class="user">
+              <img src="images/user.png" alt="User">
+            </a>
+         </nav>
+        </div>
 
-       <div class="title4">
-           <h1>Contact Us</h1>
-       </div>
-
-       <nav class="nav1">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="servicespage.html">Services</a></li>
-              <li><a href="aboutpage.html">About Us</a></li>
-              <li><a href="contactpage.html">Contact Us</a></li>
-              <li><img src="images/search.png" alt="Search"></li>
-              <li><img src="images/user.png" alt="User"></li>
-          </ul>
-       </nav>
+        <div class="title4">
+            <h1>Contact Us</h1>
+        </div>
 
     <div class="menu-icon">
         <span></span>
@@ -47,9 +57,9 @@
 <main>
   <section class="contacts">
     <div class="location">
-        <h3>New - York</h3>
-        <div class="image-container1 new-york"></div>
-        <div class="contact-info">
+        <h3  class="animation _anim-item">New - York</h3>
+        <div class="image-container1 new-york" data-aos="zoom-out-right"></div>
+        <div class="contact-info" data-aos="zoom-out-right">
             <div class="info-item1 email">
                 <span class="contact-icon email-icon"></span>
                 <span>Email</span>
@@ -68,9 +78,9 @@
         </div>
     </div>
     <div class="location">
-        <h3>Los - Angeles</h3>
-        <div class="image-container1 los-angeles"></div>
-        <div class="contact-info">
+        <h3  class="animation _anim-item">Los - Angeles</h3>
+        <div class="image-container1 los-angeles" data-aos="zoom-out-left"></div>
+        <div class="contact-info" data-aos="zoom-out-left">
             <div class="info-item1 email">
                 <span class="contact-icon email-icon"></span>
                 <span>Email</span>
@@ -91,48 +101,48 @@
 </section>
 
 <section class="contact-form-section">
-  <h2>Feel Free to Contact Us</h2>
-  <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
+  <h2  class="animation _anim-item">Feel Free to Contact Us</h2>
+  <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
   
   <form class="contact-form">
       <div class="form-row">
           <div class="form-group">
-              <label for="name">Your name</label>
+              <label for="name" class="animation _anim-item">Your name</label>
               <input type="text" id="name" placeholder="Placeholder">
           </div>
           <div class="form-group">
-              <label for="phone">Your phone</label>
-              <input type="text" id="phone" placeholder="Placeholder">
+              <label for="phone" class="animation _anim-item">Your phone</label>
+              <input type="tel" id="phone" placeholder="Placeholder">
           </div>
           <div class="form-group">
-              <label for="email">Your email</label>
+              <label for="email" class="animation _anim-item">Your email</label>
               <input type="email" id="email" placeholder="Placeholder">
           </div>
       </div>
       <div class="form-group">
-          <label for="message">Your message</label>
+          <label for="message" class="animation _anim-item">Your message</label>
           <textarea id="message" placeholder="Placeholder"></textarea>
       </div>
-      <button type="submit" class="submit-button">Send Message</button>
+      <button type="submit" class="submit-button" data-aos="fade-up" data-aos-duration="1000">Send Message</button>
   </form>
 </section>
 
 <section class="latest-news">
-    <h2>Our Latest News</h2>
-    <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
+    <h2 class="animation _anim-item">Our Latest News</h2>
+    <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
   
     <div class="blog-container">
         <div class="blog-item">
             <div class="blog-image image1"></div>
-            <div class="blog-content">
+            <div class="blog-content animation _anim-item">
                 <span class="blog-date">10 March, 2024</span>
                 <h3>Get The Flat Tummy You Dream Of</h3>
                 <a href="#" class="read-more">Read more</a>
             </div>
         </div>
         <div class="blog-item">
-            <div class="blog-image image2"></div>
-            <div class="blog-content">
+            <div class="blog-image image2 "></div>
+            <div class="blog-content animation _anim-item">
                 <span class="blog-date">09 March, 2024</span>
                 <h3>Fitness Is 50% Mental And 50% Physical</h3>
                 <a href="#" class="read-more">Read more</a>
@@ -144,45 +154,54 @@
  
 </main>
 
-   <footer class="footer">
-    
+<footer class="footer">
+
     <div class="footer-section newsletter">
-        <h3>Newsletter Sign Up</h3>
-        <div class="newsletter-form">
-          <input type="email" placeholder="Your email address" />
-          <button type="submit"></button>
-        </div>
-        <label class="privacy-policy">
-          <span class="custom-checkbox">
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-          </span>
-          I agree to the <a href="#">Privacy Policy</a>
-        </label>
-      </div>
+      <h3 class="animation _anim-item">Newsletter Sign Up</h3>
+      <div class="newsletter-form animation-paragraph _anim-item">
+        <input type="email" placeholder="Your email address" />
+        <button type="submit"></button>
+      </div> 
+      <label class="privacy-policy animation-paragraph _anim-item">
+        <span class="custom-checkbox">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </span>
+        I agree to the <a href="privacy.html">Privacy Policy</a>
+      </label>
+    </div>
   
     <div class="footer-section opening-hours">
-      <div class="logo">
+      <div class="logo" data-aos="fade-up" data-aos-duration="3000">
           <img src="images/logo.png" alt="logo" class="footer-logo" />
           <span>Fitness</span>
       </div>
       <div class="opn-hrs">
-      <h3>Opening hours</h3>
-      <p><strong>Monday - Saturday</strong><span class="time">08:00 AM - 10:00 PM</span></p>
-      <p><strong>Sunday</strong> <span class="time">10:00 AM - 8:00 PM</span></p>
+      <h3 class="animation _anim-item">Opening hours</h3>
+      <p class="animation-paragraph _anim-item"><strong>Monday - Saturday</strong><span class="time">08:00 AM - 10:00 PM</span></p>
+      <p class="animation-paragraph _anim-item"><strong>Sunday</strong> <span class="time">10:00 AM - 8:00 PM</span></p>
     </div>
     </div>
   
     <div class="footer-section locations">
-      <h3>Locations</h3>
-      <p><strong>New - York</strong> <span class="address">19 North Road Piscataway, NY 08854</span></p>
-      <p><strong>Los - Angeles</strong> <span class="address">9514 Smoky Hollow St. Sulphur, LA 70663</span></p>
+      <h3 class="animation _anim-item">Locations</h3>
+      <p class="animation-paragraph _anim-item"><strong>New - York</strong> <span class="address">19 North Road Piscataway, NY 08854</span></p>
+      <p class="animation-paragraph _anim-item"><strong>Los - Angeles</strong> <span class="address">9514 Smoky Hollow St. Sulphur, LA 70663</span></p>
     </div>
   
     <div class="copyright">
       <p>© Copyright GYM 2024. Design by Figma.guru</p>
     </div>
-  </footer> 
+
+    <div id="cookie-banner" class="cookie-banner">
+      <p class="cookie-text">
+          We use cookies to give you the best experience. Read our 
+          <a href="privacy.html" class="cookie-policy-link">cookie policy</a>.
+      </p>
+      <button id="accept-cookies" class="cookie-btn">Agree</button>
+  </div>
+
+  </footer>
 
 <script src="js/script.js"></script>
 </body>
