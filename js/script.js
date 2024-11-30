@@ -112,28 +112,6 @@ arrowUp.addEventListener('click', (e) => {
         behavior: 'smooth', 
     });
 });
-
-// function checkLink(link) {
-//     fetch(link, { method: 'HEAD' })
-//       .then(response => {
-//         if (!response.ok) {
-//           window.location.href = '404.html'; 
-//         } else {
-//           window.location.href = link;
-//         }
-//       })
-//       .catch(() => {
-//         window.location.href = '404.html';
-//       });
-//   }
-
-//   document.querySelectorAll('a').forEach(link => {
-//     link.addEventListener('click', function(event) {
-//       event.preventDefault(); 
-//       checkLink(link.href);  
-//     });
-//   });
-
 document.addEventListener('DOMContentLoaded', () => {
     fetch('json/classes.json')
       .then(response => response.json())
