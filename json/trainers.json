@@ -1,0 +1,22 @@
+[
+    {
+        "name": "John Doe",
+        "position": "CrossFit Coach",
+        "photo": "trainer1.jpg",
+        "socials": {
+            "facebook": "facebook.com/johndoe",
+            "twitter": "twitter.com/johndoe",
+            "instagram": "instagram.com/johndoe"
+        }
+    },
+    {
+        "name": "Jane Smith",
+        "position": "Yoga Instructor",
+        "photo": "trainer2.jpg",
+        "socials": {
+            "facebook": "facebook.com/janesmith",
+            "twitter": "twitter.com/janesmith",
+            "instagram": "instagram.com/janesmith"
+        }
+    }
+]

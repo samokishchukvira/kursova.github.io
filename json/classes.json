@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Cardio workouts",
+      "description": "Increase your stamina and endurance.",
+      "icon": "fa-solid fa-arrow-right"
+    },
+    {
+      "title": "Weight training",
+      "description": "Build muscle strength and tone.",
+      "icon": "fa-solid fa-arrow-right"
+    },
+    {
+      "title": "Boxing",
+      "description": "Boxing for fitness and self-defense.",
+      "icon": "fa-solid fa-arrow-right"
+    }
+  ]
+  
