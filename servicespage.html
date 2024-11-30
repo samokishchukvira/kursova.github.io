@@ -7,9 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/307576ca98.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles/style.css">
     <title>Services</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
 
@@ -18,25 +21,32 @@
       </div>
 
    <header class="header2">
-       <div class="logo">
-           <img src="images/logo.png" alt="logo">
-           <span>Fitness</span>
-       </div>
+    <div class="burger-menu">
+        <a href="index.html"><div class="logo">
+             <img src="images/logo.png" alt="logo">
+             <span>Fitness</span>
+         </div>
+        </a>
+  
+         <nav class="nav1">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="servicespage.html">Services</a></li>
+                <li><a href="aboutpage.html">About Us</a></li>
+                <li><a href="contactpage.html">Contact Us</a></li>
+            </ul>
+            <a href="search.html" class="search">
+            <img src="images/search.png" alt="Search">
+            </a>
+            <a href="http://localhost/login/index.php" target="_blank" class="user">
+              <img src="images/user.png" alt="User">
+            </a>
+         </nav>
+        </div>
 
-       <div class="title2">
-           <h1>Services</h1>
-       </div>
-
-       <nav class="nav1">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="servicespage.html">Services</a></li>
-              <li><a href="aboutpage.html">About Us</a></li>
-              <li><a href="contactpage.html">Contact Us</a></li>
-              <li><img src="images/search.png" alt="Search"></li>
-              <li><img src="images/user.png" alt="User"></li>
-          </ul>
-       </nav>
+        <div class="title2">
+            <h1>Services</h1>
+        </div>
 
     <div class="menu-icon">
         <span></span>
@@ -45,7 +55,7 @@
 
    <main>
     <section class="pricing-section">
-        <div class="pricing-info">
+        <div class="pricing-info" data-aos="zoom-in-down">
             <h2>Fitness has never been so much fun</h2>
             <div class="feature-list">
                 <div class="feature">
@@ -72,9 +82,9 @@
             </div>
         </div>        
     
-        <div class="pricing-cards">
+        <div class="pricing-cards" data-aos="zoom-in-up">
             <div class="pricing-card">
-                <h3>Month Pass</h3>
+                <h3 >Month Pass</h3>
                 <p class="price">$50<span>/month</span></p>
                 <ul class="benefits">
                     <li>&#10004; <span class="benefits-span1">24 hours access</span></li>
@@ -83,7 +93,7 @@
                     <li>&#10004; <span class="benefits-span1">Flexible classes</span></li>
                     <li>&#10004; <span class="benefits-span1">Flexible classes</span></li>
                 </ul>
-                <button class="btn">Get Started</button>
+                <button class="btn" data-aos="fade-up" data-aos-duration="1000">Get Started</button>
             </div>
             <div class="card">
             <div class="pricing-card dark-card">
@@ -94,48 +104,48 @@
                     <li>&#10004; <span class="benefits-span2">Flexible classes</span></li>
                     <li>&#10004; <span class="benefits-span2">24 hours access</span></li>
                 </ul>
-                <button class="btn">Get Started</button>
+                <button class="btn" data-aos="fade-up" data-aos-duration="1000">Get Started</button>
             </div>
         </div>
         </div>
     </section>
     
     <section class="classes-photo">
-        <h2>Our Classes</h2>
-        <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
+        <h2 class="animation _anim-item">Our Classes</h2>
+        <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
 
         <div class="class-container">
-            <div class="class-card cardio">
+            <div class="class-card cardio" data-aos="fade-left">
                 <div class="text-content">
                     <h3>Cardio Workouts</h3>
                     <p>Semper elit id tempor ac aliquam id facilisis. Egestas convallis tempus...</p>
                 </div>
             </div>
-            <div class="class-card weight-training">
+            <div class="class-card weight-training" data-aos="fade-right">
                 <div class="text-content">
                     <h3>Weight Training</h3>
                     <p>Semper elit id tempor ac aliquam id facilisis. Egestas convallis tempus...</p>
                 </div>
             </div>
-            <div class="class-card crossfit">
+            <div class="class-card crossfit" data-aos="fade-left">
                 <div class="text-content">
                     <h3>Crossfit</h3>
                     <p>Semper elit id tempor ac aliquam id facilisis. Egestas convallis tempus...</p>
                 </div>
             </div>
-            <div class="class-card boxing">
+            <div class="class-card boxing" data-aos="fade-right">
                 <div class="text-content">
                     <h3>Boxing</h3>
                     <p>Semper elit id tempor ac aliquam id facilisis. Egestas convallis tempus...</p>
                 </div>
             </div>
-            <div class="class-card yoga">
+            <div class="class-card yoga"data-aos="fade-left">
                 <div class="text-content">
                     <h3>Yoga</h3>
                     <p>Semper elit id tempor ac aliquam id facilisis. Egestas convallis tempus...</p>
                 </div>
             </div>
-            <div class="class-card cycling">
+            <div class="class-card cycling"data-aos="fade-right">
                 <div class="text-content">
                     <h3>Cycling</h3>
                     <p>Semper elit id tempor ac aliquam id facilisis. Egestas convallis tempus...</p>
@@ -145,8 +155,8 @@
     </section>
 
     <section class="timetable-section">
-        <h2>Timetable of Classes</h2>
-        <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
+        <h2 class="animation _anim-item">Timetable of Classes</h2>
+        <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
 
         <div class="table-wrapper">
         <table class="timetable-table">
@@ -224,16 +234,16 @@
     </section>
     
     <section class="info-section">
-        <div class="info-block info-block1">
+        <div class="info-block info-block1" data-aos="fade-left">
             <div class="info-image coach-image"></div>
-            <div class="info-content">
+            <div class="info-content" data-aos="fade-right">
                 <h3>Online Couching</h3>
                 <p>LOdio morbi blandit et elementum mi sit. Lectus platea imperdiet luctus curabitur neque et ullamcorper. Cursus eros sed non id tincidunt hac. Risus blandit blandit dictum urna ipsum risus lectus....</p>
                 <button class="info-btn1">Learn more</button>
             </div>
         </div>
-        <div class="info-block info-block2">
-            <div class="info-content">
+        <div class="info-block info-block2" data-aos="fade-left">
+            <div class="info-content" data-aos="fade-right">
                 <h3>Group Training</h3>
                 <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
                 <button class="info-btn2">View classes</button>
@@ -243,11 +253,11 @@
     </section>     
 
     <section class="personal-training">
-        <div class="training-content">
-            <h2>Personal Training</h2>
-            <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
+        <div class="training-content" data-aos="fade-left">
+            <h2 class="animation _anim-item">Personal Training</h2>
+            <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
         </div>
-        <div class="video-overlay">
+        <div class="video-overlay" data-aos="fade-left">
             <a href="https://youtu.be/-mpPLGD2iCs" target="_blank">
                 <div class="play-button"></div>
             </a>
@@ -256,7 +266,7 @@
 
     <section class="coach-section">
         <h2>Choose a coach</h2>
-        <div class="coach-container-description">
+        <div class="coach-container-description" data-aos="fade-left">
             <div class="coach-container">
                 <div class="coach">
                     <div class="profile-photo coach1"></div>
@@ -269,8 +279,8 @@
                     <div class="profile-photo coach3"></div>
                 </div>
             </div>
-            <div class="coach-description">
-                <p id="description-text">
+            <div class="coach-description" data-aos="fade-right">
+                <p id="description-text" >
                     Porttitor eget nisl gravida lacus sed gravida volutpat. Est pellentesque quam felis nisi eu tincidunt id scelerisque non. 
                     Commodo leo gravida enim felis. Sapien vitae urna ut eget a ornare pellentesque. Eu non elit fermentum nam. Turpis tempor viverra amet pretium nunc ac posuere mattis in.
                 </p>
@@ -285,43 +295,52 @@
    </main>
 
    <footer class="footer">
-   
+
     <div class="footer-section newsletter">
-        <h3>Newsletter Sign Up</h3>
-        <div class="newsletter-form">
-          <input type="email" placeholder="Your email address" />
-          <button type="submit"></button>
-        </div>
-        <label class="privacy-policy">
-          <span class="custom-checkbox">
-            <input type="checkbox" />
-            <span class="checkmark"></span>
-          </span>
-          I agree to the <a href="#">Privacy Policy</a>
-        </label>
-      </div>
+      <h3 class="animation _anim-item">Newsletter Sign Up</h3>
+      <div class="newsletter-form animation-paragraph _anim-item">
+        <input type="email" placeholder="Your email address" />
+        <button type="submit"></button>
+      </div> 
+      <label class="privacy-policy animation-paragraph _anim-item">
+        <span class="custom-checkbox">
+          <input type="checkbox" />
+          <span class="checkmark"></span>
+        </span>
+        I agree to the <a href="privacy.html">Privacy Policy</a>
+      </label>
+    </div>
   
     <div class="footer-section opening-hours">
-      <div class="logo">
+      <div class="logo" data-aos="fade-up" data-aos-duration="3000">
           <img src="images/logo.png" alt="logo" class="footer-logo" />
           <span>Fitness</span>
       </div>
       <div class="opn-hrs">
-      <h3>Opening hours</h3>
-      <p><strong>Monday - Saturday</strong><span class="time">08:00 AM - 10:00 PM</span></p>
-      <p><strong>Sunday</strong> <span class="time">10:00 AM - 8:00 PM</span></p>
+      <h3 class="animation _anim-item">Opening hours</h3>
+      <p class="animation-paragraph _anim-item"><strong>Monday - Saturday</strong><span class="time">08:00 AM - 10:00 PM</span></p>
+      <p class="animation-paragraph _anim-item"><strong>Sunday</strong> <span class="time">10:00 AM - 8:00 PM</span></p>
     </div>
     </div>
   
     <div class="footer-section locations">
-      <h3>Locations</h3>
-      <p><strong>New - York</strong> <span class="address">19 North Road Piscataway, NY 08854</span></p>
-      <p><strong>Los - Angeles</strong> <span class="address">9514 Smoky Hollow St. Sulphur, LA 70663</span></p>
+      <h3 class="animation _anim-item">Locations</h3>
+      <p class="animation-paragraph _anim-item"><strong>New - York</strong> <span class="address">19 North Road Piscataway, NY 08854</span></p>
+      <p class="animation-paragraph _anim-item"><strong>Los - Angeles</strong> <span class="address">9514 Smoky Hollow St. Sulphur, LA 70663</span></p>
     </div>
   
     <div class="copyright">
       <p>© Copyright GYM 2024. Design by Figma.guru</p>
     </div>
+
+    <div id="cookie-banner" class="cookie-banner">
+      <p class="cookie-text">
+          We use cookies to give you the best experience. Read our 
+          <a href="privacy.html" class="cookie-policy-link">cookie policy</a>.
+      </p>
+      <button id="accept-cookies" class="cookie-btn">Agree</button>
+  </div>
+
   </footer>
 
    <script src="js/script.js"></script>
