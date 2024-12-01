@@ -488,7 +488,8 @@ background-image: url('../images/classes3.jpg');
     align-items: center;
     flex-wrap: wrap;
     text-align: center; 
-    font-size: 15px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
     margin-bottom: 40px;
     color: #b5b5b5;
 }
