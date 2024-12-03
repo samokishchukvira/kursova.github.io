@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
@@ -13,9 +14,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/307576ca98.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Home Page</title>
     <link rel="icon" href="images/logo.png" type="image/png">
+    <title>Home Page</title>
 </head>
 <body>
   
@@ -24,28 +26,27 @@
   </div>
 
    <header class="header1">
-    <div class="burger-menu">
-      <a href="index.html"><div class="logo">
-           <img src="images/logo.png" alt="logo">
-           <span>Fitness</span>
-       </div>
+    <nav class="nav">
+      <i class="uil uil-bars navOpenBtn"></i>
+      <a href="index.html" class="logo">
+          <img src="images/logo.png" alt="logo"> Fitness
       </a>
-
-       <nav class="nav1">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="servicespage.html">Services</a></li>
-              <li><a href="aboutpage.html">About Us</a></li>
-              <li><a href="contactpage.html">Contact Us</a></li>
-          </ul>
-          <a href="search.html" class="search">
-          <img src="images/search.png" alt="Search">
-          </a>
-          <a href="http://localhost/authorization/index.php" target="_blank" class="user">
-            <img src="images/user.png" alt="User">
-          </a>
-       </nav>
+      <ul class="nav-links">
+          <i class="uil uil-times navCloseBtn"></i>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="servicespage.html">Services</a></li>
+          <li><a href="aboutpage.html">About Us</a></li>
+          <li><a href="contactpage.html">Contact Us</a></li>
+      </ul>
+      <div class="autorathion">
+          <i class="uil uil-search search-icon" id="searchIcon"></i>
+          <div class="search-box">
+              <i class="uil uil-search search-icon"></i>
+              <input type="text" placeholder="Search here..." />
+          </div>
+          <i class="uil uil-user user-icon"></i>
       </div>
+  </nav>  
 
        <div class="title1">
         <h1 class="animation _anim-item">Make yourself stronger than your excuses</h1>
@@ -80,19 +81,15 @@
   </section>
   
 
-    <section class="classes">
-        <h2 class="animation _anim-item">Our Classes</h2>
-        <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
-      
-        <div class="classes-grid" id="classes-grid"></div>
-      
-          <div class="classes-grid" id="classes-grid"></div>
-      
-        <div class="classes-grid" id="classes-grid"></div>
-        
-        </div>
-      </section>      
-
+  <section class="classes">
+    <h2 class="animation _anim-item">Our Classes</h2>
+    <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
+  
+    <div class="classes-grid">
+      <!-- Класи будуть додаватися через JavaScript -->
+    </div>
+  </section>
+  
       <section class="testimonial-section">
         <div class="testimonial-image-wrapper" data-aos="fade-right">
             <div class="testimonial-image"></div>
@@ -231,7 +228,9 @@
     <div class="banner-content">
         <h2 class="animation _anim-item">Your Fitness Destination Starts Here</h2>
         <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
+        <a href="#">
         <button class="banner-button" data-aos="fade-up" data-aos-duration="3000">Learn more</button>
+      </a>
     </div>
   </section>
 </main>
@@ -249,7 +248,7 @@
           <input type="checkbox" />
           <span class="checkmark"></span>
         </span>
-        I agree to the <a href="privacy.html">Privacy Policy</a>
+        I agree to the <a href="privacy.html" class="privacy-text"> Privacy Policy</a>
       </label>
     </div>
   
@@ -275,42 +274,32 @@
       <p>© Copyright GYM 2024. Design by Figma.guru</p>
     </div>
 
-    <!-- <div id="cookie-banner" class="cookie-banner">
-      <p class="cookie-text">
-          We use cookies to give you the best experience. Read our 
-          <a href="privacy.html" class="cookie-policy-link">cookie policy</a>.
-      </p>
-      <button id="accept-cookies" class="cookie-btn">Agree</button>
-  </div> -->
-
   </footer>
-
       <script>
-            var swiper = new Swiper(".mySwiper", {
-            slidesPerView: "auto",
-            spaceBetween: 30, 
-            centeredSlides: true, 
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
+        var swiper = new Swiper(".mySwiper", {
+        slidesPerView: "auto",
+        spaceBetween: 30, 
+        centeredSlides: true, 
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        mousewheel: true,
+        keyboard: true,
+        effect: "coverflow", 
+        coverflowEffect: {
+            rotate: 50, 
+            stretch: 0, 
+            depth: 100, 
+            modifier: 1, 
+            slideShadows: false,
             },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            mousewheel: true,
-            keyboard: true,
-            effect: "coverflow", 
-            coverflowEffect: {
-                rotate: 50, 
-                stretch: 0, 
-                depth: 100, 
-                modifier: 1, 
-                slideShadows: false,
-                },
-            });
+        });
       </script>
-
       <script src="js/script.js"></script>
   </body>
 </html>
