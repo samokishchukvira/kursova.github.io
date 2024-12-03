@@ -118,20 +118,34 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(classes => {
       const classesSection = document.querySelector('.classes-grid');
       
-      classes.forEach(classItem => {
+      if (!classesSection) {
+        console.error('Error: .classes-grid not found!');
+        return;
+      }
+
+      classes.forEach((classItem, index) => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
         
-        classItem.icon.split(' ').forEach(cls => classDiv.classList.add(cls));
+        const className = index === 0 ? 'class-cardio' : 
+                          index === 1 ? 'class-weight' : 'class-boxing';
+        classDiv.classList.add(className);
+
+        const aosType = index === 0 ? 'fade-right' : 
+                        index === 1 ? 'fade-up' : 'fade-left';
+        classDiv.setAttribute('data-aos', aosType);
 
         const classInfo = `
           <div class="class-info">
             <h3>${classItem.title}</h3>
-            <p>${classItem.description}</p> <!-- Опис класу -->
             <span><i class="${classItem.icon}"></i></span>
           </div>
         `;
         classDiv.innerHTML = classInfo;
+
+        classDiv.style.backgroundImage = `url(${classItem.image})`;
+        classDiv.style.backgroundSize = 'cover';
+        classDiv.style.backgroundPosition = 'center';
 
         classesSection.appendChild(classDiv);
       });
