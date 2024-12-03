@@ -108,7 +108,6 @@ arrowUp.addEventListener('click', (e) => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Завантажуємо JSON файл
   fetch('json/classes.json')
     .then(response => {
       if (!response.ok) {
@@ -119,27 +118,23 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(classes => {
       const classesSection = document.querySelector('.classes-grid');
       
-      // Проходимося по кожному класу в JSON
       classes.forEach(classItem => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
-        
-        // Розбиваємо класи іконок і додаємо кожен
-        classItem.icon.split(' ').forEach(cls => classDiv.classList.add(cls));
 
         // HTML для кожного класу
         const classInfo = `
+          <div class="class-image" style="background-image: url('${classItem.image}');"></div>
           <div class="class-info">
             <h3>${classItem.title}</h3>
-            <p>${classItem.description}</p> <!-- Опис класу -->
+            <p>${classItem.description}</p>
             <span><i class="${classItem.icon}"></i></span>
           </div>
         `;
         classDiv.innerHTML = classInfo;
-
-        // Додаємо до grid
         classesSection.appendChild(classDiv);
       });
     })
     .catch(error => console.error('Error loading classes:', error));
 });
+
