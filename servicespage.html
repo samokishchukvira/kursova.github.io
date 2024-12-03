@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/307576ca98.js" crossorigin="anonymous"></script>
@@ -21,28 +23,29 @@
       </div>
 
    <header class="header2">
-    <div class="burger-menu">
-        <a href="index.html"><div class="logo">
-             <img src="images/logo.png" alt="logo">
-             <span>Fitness</span>
-         </div>
+    <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="logo">
+        Fitness
         </a>
   
-         <nav class="nav1">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="servicespage.html">Services</a></li>
-                <li><a href="aboutpage.html">About Us</a></li>
-                <li><a href="contactpage.html">Contact Us</a></li>
-            </ul>
-            <a href="search.html" class="search">
-            <img src="images/search.png" alt="Search">
-            </a>
-            <a href="http://localhost/login/index.php" target="_blank" class="user">
-              <img src="images/user.png" alt="User">
-            </a>
-         </nav>
+          <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="servicespage.html">Services</a></li>
+              <li><a href="aboutpage.html">About Us</a></li>
+              <li><a href="contactpage.html">Contact Us</a></li>
+          </ul>
+          <div class="autorathion">
+          <i class="uil uil-search search-icon" id="searchIcon"></i>
+          <div class="search-box">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" placeholder="Search here..." />
+          </div>
+          <a href="http://localhost/registration/" target="_blank"><i class="uil uil-user user-icon"></i></a>
         </div>
+       </nav>
+      </div>
 
         <div class="title2">
             <h1>Services</h1>
@@ -54,6 +57,32 @@
    </header>   
 
    <main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Get Started with Fitness</h2>
+            <form action="#">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+    
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+    
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+    
+                <label for="plan">Choose a Plan:</label>
+                <select id="plan" name="plan">
+                    <option value="month">Month Pass - $50/month</option>
+                    <option value="day">Day Pass - $10/day</option>
+                </select>
+    
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    
     <section class="pricing-section">
         <div class="pricing-info" data-aos="zoom-in-down">
             <h2>Fitness has never been so much fun</h2>
@@ -93,7 +122,7 @@
                     <li>&#10004; <span class="benefits-span1">Flexible classes</span></li>
                     <li>&#10004; <span class="benefits-span1">Flexible classes</span></li>
                 </ul>
-                <button class="btn" data-aos="fade-up" data-aos-duration="1000">Get Started</button>
+                <button class="btn" data-target="#modal" data-aos="fade-up" data-aos-duration="1000">Get Started</button>
             </div>
             <div class="card">
             <div class="pricing-card dark-card">
@@ -104,7 +133,7 @@
                     <li>&#10004; <span class="benefits-span2">Flexible classes</span></li>
                     <li>&#10004; <span class="benefits-span2">24 hours access</span></li>
                 </ul>
-                <button class="btn" data-aos="fade-up" data-aos-duration="1000">Get Started</button>
+                <button class="btn" data-target="#modal" data-aos="fade-up" data-aos-duration="1000">Get Started</button>
             </div>
         </div>
         </div>
@@ -239,14 +268,14 @@
             <div class="info-content" data-aos="fade-right">
                 <h3>Online Couching</h3>
                 <p>LOdio morbi blandit et elementum mi sit. Lectus platea imperdiet luctus curabitur neque et ullamcorper. Cursus eros sed non id tincidunt hac. Risus blandit blandit dictum urna ipsum risus lectus....</p>
-                <button class="info-btn1">Learn more</button>
+                <a href="#"><button class="info-btn1">Learn more</button></a>
             </div>
         </div>
         <div class="info-block info-block2" data-aos="fade-left">
             <div class="info-content" data-aos="fade-right">
                 <h3>Group Training</h3>
                 <p>Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit. Nibh varius netus vestibulum id vitae ut aliquam.</p>
-                <button class="info-btn2">View classes</button>
+                <a href="#"><button class="info-btn2">View classes</button></a>
             </div>
             <div class="info-image training-image"></div>
         </div>
@@ -307,7 +336,7 @@
           <input type="checkbox" />
           <span class="checkmark"></span>
         </span>
-        I agree to the <a href="privacy.html">Privacy Policy</a>
+        I agree to the <a href="privacy.html" class="privacy-text">Privacy Policy</a>
       </label>
     </div>
   
@@ -332,14 +361,6 @@
     <div class="copyright">
       <p>© Copyright GYM 2024. Design by Figma.guru</p>
     </div>
-
-    <div id="cookie-banner" class="cookie-banner">
-      <p class="cookie-text">
-          We use cookies to give you the best experience. Read our 
-          <a href="privacy.html" class="cookie-policy-link">cookie policy</a>.
-      </p>
-      <button id="accept-cookies" class="cookie-btn">Agree</button>
-  </div>
 
   </footer>
 
