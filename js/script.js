@@ -107,7 +107,7 @@ arrowUp.addEventListener('click', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('json/classes.json')
+   fetch('json/classes.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -120,18 +120,22 @@ document.addEventListener('DOMContentLoaded', () => {
       classes.forEach(classItem => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
-        classDiv.dataset.aos = "fade-up"; 
 
+        // Встановлення фонового зображення через CSS
+        classDiv.style.backgroundImage = `url('${classItem.image}')`;
+        classDiv.style.backgroundSize = 'cover'; // Фон заповнює весь елемент
+        classDiv.style.backgroundPosition = 'center'; // Центруємо зображення
+
+        // Додавання текстового контенту
         const classInfo = `
           <div class="class-info">
             <h3>${classItem.title}</h3>
             <span><i class="${classItem.icon}"></i></span>
           </div>
-          <img src="${classItem.image}" alt="${classItem.title}">
         `;
         classDiv.innerHTML = classInfo;
 
-        classesSection.appendChild(classDiv);
+        classesSection.appendChild(classDiv); // Додаємо елемент до секції
       });
     })
     .catch(error => console.error('Error loading classes:', error));
