@@ -117,24 +117,30 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(classes => {
       const classesSection = document.querySelector('.classes-grid');
-      
+
       classes.forEach(classItem => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
+        classDiv.dataset.aos = 'fade-up'; // Додає анімацію
 
-        // HTML для кожного класу
+        // Додаємо фонове зображення
+        classDiv.style.backgroundImage = `url(${classItem.image})`;
+        classDiv.style.backgroundSize = 'cover';
+        classDiv.style.backgroundPosition = 'center';
+
+        // Додаємо інформацію про клас
         const classInfo = `
-          <div class="class-image" style="background-image: url('${classItem.image}');"></div>
           <div class="class-info">
             <h3>${classItem.title}</h3>
-            <p>${classItem.description}</p>
             <span><i class="${classItem.icon}"></i></span>
           </div>
         `;
+
         classDiv.innerHTML = classInfo;
         classesSection.appendChild(classDiv);
       });
     })
     .catch(error => console.error('Error loading classes:', error));
 });
+
 
