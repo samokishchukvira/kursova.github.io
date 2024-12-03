@@ -487,6 +487,10 @@ background-image: url('../images/classes3.jpg');
     position: relative; 
     overflow: hidden; 
 }
+.class-item img {
+   height: auto; 
+  object-fit: cover;
+}
 .class-info {
     position: absolute;
     bottom: 10px; 
