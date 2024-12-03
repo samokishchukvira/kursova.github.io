@@ -138,27 +138,36 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error('Error loading classes:', error));
 
-    fetch('json/banner.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(banner => {
-      const bannerSection = document.querySelector('.banner-content');
+   fetch('json/banner.json')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(banner => {
+    const bannerSection = document.querySelector('.banner-content');
 
-      const bannerContent = `
-        <h2 class="animation _anim-item">${banner.title}</h2>
-        <p class="animation-paragraph _anim-item">${banner.description}</p>
-        <a href="${banner.buttonLink}">
-          <button class="banner-button" data-aos="fade-up" data-aos-duration="1000">${banner.buttonText}</button>
-        </a>
-      `;
+    // Встановлюємо фон секції
+    bannerSection.style.backgroundImage = `url(${banner.backgroundImage})`;
+    bannerSection.style.backgroundSize = 'cover';
+    bannerSection.style.backgroundPosition = 'center';
+    bannerSection.style.color = '#fff'; // Робимо текст білим для контрасту
 
-      bannerSection.innerHTML = bannerContent;
-    })
-    .catch(error => console.error('Error loading banner:', error));
+    // Генеруємо текст і кнопку
+    const bannerContent = `
+      <h2 class="animation _anim-item">${banner.title}</h2>
+      <p class="animation-paragraph _anim-item">${banner.description}</p>
+      <a href="${banner.buttonLink}">
+        <button class="banner-button" data-aos="fade-up" data-aos-duration="1000">${banner.buttonText}</button>
+      </a>
+    `;
+
+    // Вставляємо контент у секцію
+    bannerSection.innerHTML = bannerContent;
+  })
+  .catch(error => console.error('Error loading banner:', error));
+
 });
 
   const modal = document.getElementById("modal");
