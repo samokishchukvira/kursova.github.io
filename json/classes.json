@@ -2,16 +2,16 @@
   {
     "title": "Cardio workouts",
     "icon": "fa-solid fa-arrow-right",
-    "image": "../images/classes1.jpg"
+    "image": "images/cardio.jpg"
   },
   {
     "title": "Weight training",
     "icon": "fa-solid fa-arrow-right",
-    "image": "../images/classes2.jpg"
+    "image": "images/weight.jpg"
   },
   {
     "title": "Boxing",
     "icon": "fa-solid fa-arrow-right",
-    "image": "../images/classes3.jpg"
+    "image": "images/boxing.jpg"
   }
 ]
