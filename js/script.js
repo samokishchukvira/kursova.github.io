@@ -106,26 +106,39 @@ arrowUp.addEventListener('click', (e) => {
     });
 });
 
+
 document.addEventListener('DOMContentLoaded', () => {
+  // Завантажуємо JSON файл
   fetch('json/classes.json')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then(classes => {
       const classesSection = document.querySelector('.classes-grid');
+      
+      // Проходимося по кожному класу в JSON
       classes.forEach(classItem => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
-        classDiv.classList.add(classItem.icon);  // Додає клас для іконки
+        
+        // Розбиваємо класи іконок і додаємо кожен
+        classItem.icon.split(' ').forEach(cls => classDiv.classList.add(cls));
 
-        // Створення HTML для кожного класу, включаючи опис
+        // HTML для кожного класу
         const classInfo = `
           <div class="class-info">
             <h3>${classItem.title}</h3>
-            <p>${classItem.description}</p>  <!-- Опис класу -->
+            <p>${classItem.description}</p> <!-- Опис класу -->
             <span><i class="${classItem.icon}"></i></span>
           </div>
         `;
         classDiv.innerHTML = classInfo;
-        classesSection.appendChild(classDiv);  // Додає клас у grid
+
+        // Додаємо до grid
+        classesSection.appendChild(classDiv);
       });
     })
     .catch(error => console.error('Error loading classes:', error));
