@@ -23,9 +23,6 @@ html{
     font-weight: 700;
     color: white;
 }
-.banner-button {
-    background: none; 
-  }
 .nav a {
     text-decoration: none;
     color: white;
@@ -50,6 +47,7 @@ html{
     max-width: 280px;
     width: 100%;
     padding-top: 100px;
+    text-align: center;
     flex-direction: column;
     row-gap: 30px;
     list-style: none;
@@ -140,6 +138,37 @@ html{
     100% {
         background-position: 0% 50%;
     }
+}
+.nav-links a {
+    letter-spacing: 0;
+}
+.nav-links a:hover,
+.nav-links a:active {
+  letter-spacing: 5px;
+  font-weight: bolder;
+}
+.nav-links a:after,
+.nav-links a:before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+.nav-links a:after,
+.nav-links a:before {
+  backface-visibility: hidden;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+.nav-links a:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
 }
 [data-aos] {
     transform: translate(0, 0);
@@ -486,10 +515,6 @@ background-image: url('../images/classes3.jpg');
     background-position: center; 
     position: relative; 
     overflow: hidden; 
-}
-.class-item img {
-   height: auto; 
-  object-fit: cover;
 }
 .class-info {
     position: absolute;
