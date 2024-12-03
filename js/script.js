@@ -24,18 +24,34 @@ if (window.innerWidth > 350) {
     });
   }
   
+const nav = document.querySelector(".nav"),
+searchIcon = document.querySelector("#searchIcon"),
+navOpenBtn = document.querySelector(".navOpenBtn"),
+navCloseBtn = document.querySelector(".navCloseBtn");
 
-const menuIcon = document.querySelector('.menu-icon');
-const navSelectors = ['.nav1', '.nav2', '.nav3', '.nav4']; 
+searchIcon.addEventListener("click", () => {
+    nav.classList.toggle("openSearch");
+    nav.classList.remove("openNav");
+    if(nav.classList.contains("openSearch")){
+        return searchIcon.classList.replace("uil-search", "uil-times");
+    }
+    searchIcon.classList.replace("uil-times", "uil-search");
+});
 
-menuIcon.addEventListener('click', function() {
-    this.classList.toggle('active'); 
-    navSelectors.forEach(selector => {
-        const nav = document.querySelector(selector);
-        if (nav) {
-            nav.classList.toggle('open'); 
-        }
-    });
+navOpenBtn.addEventListener("click", () => {
+    nav.classList.add("openNav");
+    nav.classList.remove("openSearch");
+    searchIcon.classList.replace("uil-times", "uil-search");
+});
+navCloseBtn.addEventListener("click", () => {
+    nav.classList.remove("openNav");
+});
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) { 
+      nav.classList.add("scrolled");
+  } else {
+      nav.classList.remove("scrolled");
+  }
 });
 
 const animItems = document.querySelectorAll('._anim-item');
@@ -71,29 +87,6 @@ if (animItems.length > 0) {
         animOnScroll();
     }, 300);
 }
-document.addEventListener("DOMContentLoaded", () => {
-    const banner = document.getElementById("cookie-banner");
-    const acceptBtn = document.getElementById("accept-cookies");
-    if (!localStorage.getItem("cookiesAccepted")) {
-        banner.style.display = "flex";
-    }
-    acceptBtn.addEventListener("click", () => {
-        localStorage.setItem("cookiesAccepted", "true"); 
-        banner.style.display = "none"; 
-    });
-});
-
-const nav1 = document.querySelector('.nav1');
-
-function checkScroll() {
-    if (window.scrollY > 50) {  
-        nav1.classList.add('scrolled');
-    } else {
-        nav1.classList.remove('scrolled'); 
-    }
-}
-window.addEventListener('scroll', checkScroll);
-
 
 const arrowUp = document.querySelector('.arrow-up');
 
@@ -112,53 +105,28 @@ arrowUp.addEventListener('click', (e) => {
         behavior: 'smooth', 
     });
 });
+
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('json/classes.json')
-      .then(response => response.json())
-      .then(classes => {
-        const classesSection = document.querySelector('.classes-grid');
-        classes.forEach(classItem => {
-          const classDiv = document.createElement('div');
-          classDiv.classList.add('class-item');
-          classDiv.classList.add(classItem.icon);  
-  
-          const classInfo = `
-            <div class="class-info">
-              <h3>${classItem.title}</h3>
-              <p>${classItem.description}</p>
-              <span><i class="${classItem.icon}"></i></span>
-            </div>
-          `;
-          classDiv.innerHTML = classInfo;
-          classesSection.appendChild(classDiv);
-        });
-      })
-      .catch(error => console.error('Error loading classes:', error));
-  
-    fetch('json/trainers.json')
-      .then(response => response.json())
-      .then(trainers => {
-        const trainersSection = document.querySelector('.trainer-list');
-        trainers.forEach(trainer => {
-          const trainerDiv = document.createElement('div');
-          trainerDiv.classList.add('swiper-slide');
-  
-          const trainerContent = `
-            <div class="trainer">
-              <div class="trainer-photo" style="background-image: url('${trainer.image}')"></div>
-              <h3>${trainer.name}</h3>
-              <p>${trainer.role}</p>
-              <div class="social-icons">
-                <span class="icon1 facebook"><a href="${trainer.social.facebook}" target="_blank">Facebook</a></span>
-                <span class="icon1 twitter"><a href="${trainer.social.twitter}" target="_blank">Twitter</a></span>
-                <span class="icon1 instagram"><a href="${trainer.social.instagram}" target="_blank">Instagram</a></span>
-              </div>
-            </div>
-          `;
-          trainerDiv.innerHTML = trainerContent;
-          trainersSection.appendChild(trainerDiv);
-        });
-      })
-      .catch(error => console.error('Error loading trainers:', error));
-  });
-  
+  fetch('json/classes.json')
+    .then(response => response.json())
+    .then(classes => {
+      const classesSection = document.querySelector('.classes-grid');
+      classes.forEach(classItem => {
+        const classDiv = document.createElement('div');
+        classDiv.classList.add('class-item');
+        classDiv.classList.add(classItem.icon);  // Додає клас для іконки
+
+        // Створення HTML для кожного класу, включаючи опис
+        const classInfo = `
+          <div class="class-info">
+            <h3>${classItem.title}</h3>
+            <p>${classItem.description}</p>  <!-- Опис класу -->
+            <span><i class="${classItem.icon}"></i></span>
+          </div>
+        `;
+        classDiv.innerHTML = classInfo;
+        classesSection.appendChild(classDiv);  // Додає клас у grid
+      });
+    })
+    .catch(error => console.error('Error loading classes:', error));
+});
