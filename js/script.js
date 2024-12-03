@@ -121,12 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
 
-        // Встановлення фонового зображення через CSS
         classDiv.style.backgroundImage = `url('${classItem.image}')`;
-        classDiv.style.backgroundSize = 'cover'; // Фон заповнює весь елемент
-        classDiv.style.backgroundPosition = 'center'; // Центруємо зображення
+        classDiv.style.backgroundSize = 'cover'; 
+        classDiv.style.backgroundPosition = 'center'; 
 
-        // Додавання текстового контенту
         const classInfo = `
           <div class="class-info">
             <h3>${classItem.title}</h3>
@@ -135,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         classDiv.innerHTML = classInfo;
 
-        classesSection.appendChild(classDiv); // Додаємо елемент до секції
+        classesSection.appendChild(classDiv); 
       });
     })
     .catch(error => console.error('Error loading classes:', error));
