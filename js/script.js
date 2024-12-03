@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error('Error loading classes:', error));
 
-   fetch('json/banner.json')
+  fetch('json/banner.json')
   .then(response => {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -148,13 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
   .then(banner => {
     const bannerSection = document.querySelector('.banner-content');
 
-    // Встановлюємо фон секції
+    // Очищуємо фон секції, якщо він вже є
+    bannerSection.style.backgroundImage = '';
+
+    // Встановлюємо нове фонове зображення
     bannerSection.style.backgroundImage = `url(${banner.backgroundImage})`;
     bannerSection.style.backgroundSize = 'cover';
     bannerSection.style.backgroundPosition = 'center';
-    bannerSection.style.color = '#fff'; // Робимо текст білим для контрасту
 
-    // Генеруємо текст і кнопку
+    // Додаємо текст і кнопку
     const bannerContent = `
       <h2 class="animation _anim-item">${banner.title}</h2>
       <p class="animation-paragraph _anim-item">${banner.description}</p>
@@ -162,11 +164,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <button class="banner-button" data-aos="fade-up" data-aos-duration="1000">${banner.buttonText}</button>
       </a>
     `;
-
-    // Вставляємо контент у секцію
     bannerSection.innerHTML = bannerContent;
   })
   .catch(error => console.error('Error loading banner:', error));
+
 
 });
 
