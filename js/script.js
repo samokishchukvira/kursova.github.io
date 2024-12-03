@@ -106,7 +106,6 @@ arrowUp.addEventListener('click', (e) => {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', () => {
   fetch('json/classes.json')
     .then(response => {
@@ -118,34 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(classes => {
       const classesSection = document.querySelector('.classes-grid');
       
-      if (!classesSection) {
-        console.error('Error: .classes-grid not found!');
-        return;
-      }
-
-      classes.forEach((classItem, index) => {
+      classes.forEach(classItem => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
         
-        const className = index === 0 ? 'class-cardio' : 
-                          index === 1 ? 'class-weight' : 'class-boxing';
-        classDiv.classList.add(className);
-
-        const aosType = index === 0 ? 'fade-right' : 
-                        index === 1 ? 'fade-up' : 'fade-left';
-        classDiv.setAttribute('data-aos', aosType);
+        classItem.icon.split(' ').forEach(cls => classDiv.classList.add(cls));
 
         const classInfo = `
           <div class="class-info">
             <h3>${classItem.title}</h3>
+            <p>${classItem.description}</p> <!-- Опис класу -->
             <span><i class="${classItem.icon}"></i></span>
           </div>
         `;
         classDiv.innerHTML = classInfo;
-
-        classDiv.style.backgroundImage = `url(${classItem.image})`;
-        classDiv.style.backgroundSize = 'cover';
-        classDiv.style.backgroundPosition = 'center';
 
         classesSection.appendChild(classDiv);
       });
@@ -175,4 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch(error => console.error('Error loading banner:', error));
 });
 
+  const modal = document.getElementById("modal");
+  const openModalBtn = document.querySelector("[data-target='#modal']");
+  const closeModalBtn = document.querySelector(".close");
 
+  openModalBtn.addEventListener("click", () => {
+      modal.style.display = "flex"; 
+  });
+
+  closeModalBtn.addEventListener("click", () => {
+      modal.style.display = "none"; 
+  });
+
+  window.addEventListener("click", (event) => {
+      if (event.target === modal) {
+          modal.style.display = "none";
+      }
+  });
