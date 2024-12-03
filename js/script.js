@@ -116,19 +116,18 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(classes => {
       const classesSection = document.querySelector('.classes-grid');
-      
+
       classes.forEach(classItem => {
         const classDiv = document.createElement('div');
         classDiv.classList.add('class-item');
-        
-        classItem.icon.split(' ').forEach(cls => classDiv.classList.add(cls));
+        classDiv.dataset.aos = "fade-up"; 
 
         const classInfo = `
           <div class="class-info">
             <h3>${classItem.title}</h3>
-            <p>${classItem.description}</p> <!-- Опис класу -->
             <span><i class="${classItem.icon}"></i></span>
           </div>
+          <img src="${classItem.image}" alt="${classItem.title}">
         `;
         classDiv.innerHTML = classInfo;
 
@@ -151,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h2 class="animation _anim-item">${banner.title}</h2>
         <p class="animation-paragraph _anim-item">${banner.description}</p>
         <a href="${banner.buttonLink}">
-          <button class="banner-button" data-aos="fade-up" data-aos-duration="3000">${banner.buttonText}</button>
+          <button class="banner-button" data-aos="fade-up" data-aos-duration="1000">${banner.buttonText}</button>
         </a>
       `;
 
