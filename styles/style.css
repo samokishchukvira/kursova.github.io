@@ -23,6 +23,9 @@ html{
     font-weight: 700;
     color: white;
 }
+.banner-button {
+    background: none; 
+  }
 .nav a {
     text-decoration: none;
     color: white;
