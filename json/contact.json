@@ -1,0 +1,29 @@
+{
+  "title": "Feel Free to Contact Us",
+  "description": "Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.",
+  "fields": [
+    {
+      "label": "Your name",
+      "type": "text",
+      "id": "name",
+      "placeholder": "Enter your name"
+    },
+    {
+      "label": "Your phone",
+      "type": "tel",
+      "id": "phone",
+      "placeholder": "Enter your phone number"
+    },
+    {
+      "label": "Your email",
+      "type": "email",
+      "id": "email",
+      "placeholder": "Enter your email"
+    }
+  ],
+  "message": {
+    "label": "Your message",
+    "placeholder": "Enter your message"
+  },
+  "button": "Send Message"
+}
