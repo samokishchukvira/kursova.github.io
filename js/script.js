@@ -107,69 +107,49 @@ arrowUp.addEventListener('click', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-   fetch('json/classes.json')
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(classes => {
-      const classesSection = document.querySelector('.classes-grid');
-
-      classes.forEach(classItem => {
-        const classDiv = document.createElement('div');
-        classDiv.classList.add('class-item');
-
-        classDiv.style.backgroundImage = `url('${classItem.image}')`;
-        classDiv.style.backgroundSize = 'cover'; 
-        classDiv.style.backgroundPosition = 'center'; 
-
-        const classInfo = `
-          <div class="class-info">
-            <h3>${classItem.title}</h3>
-            <span><i class="${classItem.icon}"></i></span>
-          </div>
+    fetch('json/contact.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const contactSection = document.querySelector('.contact-form-section');
+        contactSection.innerHTML = `
+          <h2 class="animation _anim-item">${data.title}</h2>
+          <p class="animation-paragraph _anim-item">${data.description}</p>
+          <form class="contact-form">
+            <div class="form-row">
+              ${data.fields
+                .map(
+                  (field) => `
+                <div class="form-group">
+                  <label for="${field.id}" class="animation _anim-item">${field.label}</label>
+                  <input type="${field.type}" id="${field.id}" placeholder="${field.placeholder}">
+                </div>
+              `
+                )
+                .join('')}
+            </div>
+            <div class="form-group">
+              <label for="message" class="animation _anim-item">${data.message.label}</label>
+              <textarea id="message" placeholder="${data.message.placeholder}"></textarea>
+            </div>
+            <button type="submit" class="submit-button" data-aos="fade-up" data-aos-duration="1000">${data.button}</button>
+          </form>
         `;
-        classDiv.innerHTML = classInfo;
+      })
+      .catch((error) => console.error('Error loading contact data:', error));
 
-        classesSection.appendChild(classDiv); 
-      });
-    })
-    .catch(error => console.error('Error loading classes:', error));
-
-  fetch('json/banner.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(banner => {
-    const bannerSection = document.querySelector('.banner-content');
-
-    // Очищуємо фон секції, якщо він вже є
-    bannerSection.style.backgroundImage = '';
-
-    // Встановлюємо нове фонове зображення
-    bannerSection.style.backgroundImage = `url(${banner.backgroundImage})`;
-    bannerSection.style.backgroundSize = 'cover';
-    bannerSection.style.backgroundPosition = 'center';
-
-    // Додаємо текст і кнопку
-    const bannerContent = `
-      <h2 class="animation _anim-item">${banner.title}</h2>
-      <p class="animation-paragraph _anim-item">${banner.description}</p>
-      <a href="${banner.buttonLink}">
-        <button class="banner-button" data-aos="fade-up" data-aos-duration="1000">${banner.buttonText}</button>
-      </a>
-    `;
-    bannerSection.innerHTML = bannerContent;
-  })
-  .catch(error => console.error('Error loading banner:', error));
-
-
+    fetch('json/video.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const videoSection = document.querySelector('.video-section');
+        videoSection.innerHTML = `
+          <a href="${data.link}" target="_blank">
+            <div class="play-button" data-aos="${data.animation.effect}" data-aos-duration="${data.animation.duration}"></div>
+          </a>
+        `;
+      })
+      .catch((error) => console.error('Error loading video data:', error));
 });
+
 
   const modal = document.getElementById("modal");
   const openModalBtn = document.querySelector("[data-target='#modal']");
