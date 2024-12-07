@@ -23,7 +23,51 @@ if (window.innerWidth > 350) {
       disable: true,  
     });
   }
-  
+
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('json/contact.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const contactSection = document.querySelector('.contact-form-section');
+        contactSection.innerHTML = `
+          <h2 class="animation _anim-item">${data.title}</h2>
+          <p class="animation-paragraph _anim-item">${data.description}</p>
+          <form class="contact-form">
+            <div class="form-row">
+              ${data.fields
+                .map(
+                  (field) => `
+                <div class="form-group">
+                  <label for="${field.id}" class="animation _anim-item">${field.label}</label>
+                  <input type="${field.type}" id="${field.id}" placeholder="${field.placeholder}">
+                </div>
+              `
+                )
+                .join('')}
+            </div>
+            <div class="form-group">
+              <label for="message" class="animation _anim-item">${data.message.label}</label>
+              <textarea id="message" placeholder="${data.message.placeholder}"></textarea>
+            </div>
+            <button type="submit" class="submit-button" data-aos="fade-up" data-aos-duration="1000">${data.button}</button>
+          </form>
+        `;
+      })
+      .catch((error) => console.error('Error loading contact data:', error));
+
+    fetch('json/video.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const videoSection = document.querySelector('.video-section');
+        videoSection.innerHTML = `
+          <a href="${data.link}" target="_blank">
+            <div class="play-button" data-aos="${data.animation.effect}" data-aos-duration="${data.animation.duration}"></div>
+          </a>
+        `;
+      })
+      .catch((error) => console.error('Error loading video data:', error));
+});
+
 const nav = document.querySelector(".nav"),
 searchIcon = document.querySelector("#searchIcon"),
 navOpenBtn = document.querySelector(".navOpenBtn"),
@@ -105,51 +149,6 @@ arrowUp.addEventListener('click', (e) => {
         behavior: 'smooth', 
     });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('json/contact.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const contactSection = document.querySelector('.contact-form-section');
-        contactSection.innerHTML = `
-          <h2 class="animation _anim-item">${data.title}</h2>
-          <p class="animation-paragraph _anim-item">${data.description}</p>
-          <form class="contact-form">
-            <div class="form-row">
-              ${data.fields
-                .map(
-                  (field) => `
-                <div class="form-group">
-                  <label for="${field.id}" class="animation _anim-item">${field.label}</label>
-                  <input type="${field.type}" id="${field.id}" placeholder="${field.placeholder}">
-                </div>
-              `
-                )
-                .join('')}
-            </div>
-            <div class="form-group">
-              <label for="message" class="animation _anim-item">${data.message.label}</label>
-              <textarea id="message" placeholder="${data.message.placeholder}"></textarea>
-            </div>
-            <button type="submit" class="submit-button" data-aos="fade-up" data-aos-duration="1000">${data.button}</button>
-          </form>
-        `;
-      })
-      .catch((error) => console.error('Error loading contact data:', error));
-
-    fetch('json/video.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const videoSection = document.querySelector('.video-section');
-        videoSection.innerHTML = `
-          <a href="${data.link}" target="_blank">
-            <div class="play-button" data-aos="${data.animation.effect}" data-aos-duration="${data.animation.duration}"></div>
-          </a>
-        `;
-      })
-      .catch((error) => console.error('Error loading video data:', error));
-});
-
 
   const modal = document.getElementById("modal");
   const openModalBtn = document.querySelector("[data-target='#modal']");
