@@ -7,20 +7,38 @@
     <meta name="description" content="">
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://kit.fontawesome.com/307576ca98.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="icon" href="images/logo.png" type="image/png">
     <title>Home Page</title>
 </head>
 <body>
-  
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Get Started with Fitness</h2>
+        <form action="#">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</div>
+
   <div class="arrow-up">
     <a href="#"><i class="fas fa-arrow-up"></i></a>
   </div>
@@ -44,7 +62,7 @@
               <i class="uil uil-search search-icon"></i>
               <input type="text" placeholder="Search here..." />
           </div>
-          <i class="uil uil-user user-icon"></i>
+          <a href="http://localhost/registration/" target="_blank"><i class="uil uil-user user-icon"></i></a>
       </div>
   </nav>  
 
@@ -56,9 +74,6 @@
         </a>
     </div>
     
-    <div class="menu-icon">
-        <span></span>
-    </div>
    </header>
    
 <main>
@@ -86,9 +101,27 @@
         <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
       
         <div class="classes-grid">
-            
+          <div class="class-item class-cardio" data-aos="fade-right">
+            <div class="class-info">
+              <h3>Cardio workouts</h3>
+              <span><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+      
+          <div class="class-item class-weight" data-aos="fade-up">
+            <div class="class-info">
+              <h3>Weight training</h3>
+              <span><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
+      
+          <div class="class-item class-boxing" data-aos="fade-left">
+            <div class="class-info">
+              <h3>Boxing</h3>
+              <span><i class="fa-solid fa-arrow-right"></i></span>
+            </div>
+          </div>
         </div>
-        
       </section>      
 
       <section class="testimonial-section">
@@ -191,8 +224,6 @@
                 </div>
             </div>
           </div>
-        </div>
-      </div>
     </section>
     
     <section class="info-block">
@@ -226,33 +257,32 @@
   </section>
   
   <section class="banner">
-<!--        <div class="banner-content">
-           
-       </div> -->
+    <div class="banner-content">
+        <h2 class="animation _anim-item">Your Fitness Destination Starts Here</h2>
+        <p class="animation-paragraph _anim-item">Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.</p>
+          <button class="banner-button" data-target="#modal" data-aos="fade-up" data-aos-duration="3000">Learn more</button>
+    </div>
   </section>
-    
 </main>
     
   <footer class="footer">
-
     <div class="footer-section newsletter">
       <h3 class="animation _anim-item">Newsletter Sign Up</h3>
       <div class="newsletter-form animation-paragraph _anim-item">
-        <input type="email" placeholder="Your email address" />
+        <input type="email" placeholder="Your email address">
         <button type="submit"></button>
       </div> 
       <label class="privacy-policy animation-paragraph _anim-item">
         <span class="custom-checkbox">
-          <input type="checkbox" />
+          <input type="checkbox">
           <span class="checkmark"></span>
         </span>
         I agree to the <a href="privacy.html" class="privacy-text"> Privacy Policy</a>
       </label>
     </div>
-  
     <div class="footer-section opening-hours">
       <div class="logo" data-aos="fade-up" data-aos-duration="3000">
-          <img src="images/logo.png" alt="logo" class="footer-logo" />
+          <img src="images/logo.png" alt="logo" class="footer-logo">
           <span>Fitness</span>
       </div>
       <div class="opn-hrs">
@@ -261,43 +291,18 @@
       <p class="animation-paragraph _anim-item"><strong>Sunday</strong> <span class="time">10:00 AM - 8:00 PM</span></p>
     </div>
     </div>
-  
     <div class="footer-section locations">
       <h3 class="animation _anim-item">Locations</h3>
       <p class="animation-paragraph _anim-item"><strong>New - York</strong> <span class="address">19 North Road Piscataway, NY 08854</span></p>
       <p class="animation-paragraph _anim-item"><strong>Los - Angeles</strong> <span class="address">9514 Smoky Hollow St. Sulphur, LA 70663</span></p>
     </div>
-  
     <div class="copyright">
       <p>© Copyright GYM 2024. Design by Figma.guru</p>
     </div>
-
   </footer>
-      <script>
-        var swiper = new Swiper(".mySwiper", {
-        slidesPerView: "auto",
-        spaceBetween: 30, 
-        centeredSlides: true, 
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        mousewheel: true,
-        keyboard: true,
-        effect: "coverflow", 
-        coverflowEffect: {
-            rotate: 50, 
-            stretch: 0, 
-            depth: 100, 
-            modifier: 1, 
-            slideShadows: false,
-            },
-        });
-      </script>
-      <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/307576ca98.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
