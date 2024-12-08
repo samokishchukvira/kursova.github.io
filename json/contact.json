@@ -6,24 +6,24 @@
       "label": "Your name",
       "type": "text",
       "id": "name",
-      "placeholder": "Enter your name"
+      "placeholder": "Placeholder"
     },
     {
       "label": "Your phone",
       "type": "tel",
       "id": "phone",
-      "placeholder": "Enter your phone number"
+      "placeholder": "Placeholder"
     },
     {
       "label": "Your email",
       "type": "email",
       "id": "email",
-      "placeholder": "Enter your email"
+      "placeholder": "Placeholder"
     }
   ],
   "message": {
     "label": "Your message",
-    "placeholder": "Enter your message"
+    "placeholder": "Placeholder"
   },
   "button": "Send Message"
 }
