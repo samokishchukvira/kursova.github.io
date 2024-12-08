@@ -170,6 +170,10 @@ html{
   top: 0;
   width: 70%;
 }
+[data-aos^="fade"][data-aos^="fade"] {
+  opacity: 1;
+  transition-property: opacity,transform;
+}
 [data-aos] {
     transform: translate(0, 0);
 }
