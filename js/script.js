@@ -25,36 +25,40 @@ if (window.innerWidth > 350) {
   }
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('json/contact.json')
-      .then((response) => response.json())
-      .then((data) => {
-        const contactSection = document.querySelector('.contact-form-section');
-        contactSection.innerHTML = `
-          <h2 class="animation _anim-item">${data.title}</h2>
-          <p class="animation-paragraph _anim-item">${data.description}</p>
-          <form class="contact-form">
-            <div class="form-row">
-              ${data.fields
-                .map(
-                  (field) => `
-                <div class="form-group">
-                  <label for="${field.id}" class="animation _anim-item">${field.label}</label>
-                  <input type="${field.type}" id="${field.id}" placeholder="${field.placeholder}">
-                </div>
-              `
-                )
-                .join('')}
-            </div>
-            <div class="form-group">
-              <label for="message" class="animation _anim-item">${data.message.label}</label>
-              <textarea id="message" placeholder="${data.message.placeholder}"></textarea>
-            </div>
-            <button type="submit" class="submit-button" data-aos="fade-up" data-aos-duration="1000">${data.button}</button>
-          </form>
-        `;
-      })
-      .catch((error) => console.error('Error loading contact data:', error));
-
+  fetch('json/contact.json')
+    .then((response) => response.json())
+    .then((data) => {
+      const contactSection = document.querySelector('.contact-form-section');
+      if (!contactSection) {
+        console.error('Error: contact-form-section element not found.');
+        return;
+      }
+      contactSection.innerHTML = `
+        <h2 class="animation _anim-item">${data.title}</h2>
+        <p class="animation-paragraph _anim-item">${data.description}</p>
+        <form class="contact-form">
+          <div class="form-row">
+            ${data.fields
+              .map(
+                (field) => `
+              <div class="form-group">
+                <label for="${field.id}" class="animation _anim-item">${field.label}</label>
+                <input type="${field.type}" id="${field.id}" placeholder="${field.placeholder}">
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+          <div class="form-group">
+            <label for="message" class="animation _anim-item">${data.message.label}</label>
+            <textarea id="message" placeholder="${data.message.placeholder}"></textarea>
+          </div>
+          <button type="submit" class="submit-button" data-aos="fade-up" data-aos-duration="1000">${data.button}</button>
+        </form>
+      `;
+    })
+    .catch((error) => console.error('Error loading contact data:', error));
+        
     fetch('json/video.json')
       .then((response) => response.json())
       .then((data) => {
