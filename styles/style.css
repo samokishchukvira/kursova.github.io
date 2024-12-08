@@ -227,7 +227,7 @@ html{
 .header3 {
     display: flex; 
     justify-content: space-between; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo1.jpg');     
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo1.webp');     
     background-size: cover; 
     background-position: bottom center; 
     height: 420px; 
@@ -237,7 +237,7 @@ html{
 .header4 {
     display: flex; 
     justify-content: space-between; 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo4.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/photo4.webp');
     background-size: cover; 
     background-position: center; 
     height: 420px; 
@@ -345,7 +345,7 @@ html{
     transition: all 0.3s ease; 
 }
 .banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/studio.jpg'); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/studio.webp'); 
     background-size: cover; 
     background-position: center;
     height: 480px; 
@@ -480,13 +480,13 @@ html{
     border-radius: 50%;
 }
 .class-cardio {
-background-image: url('../images/classes1.jpg');
+background-image: url('../images/classes1.webp');
 }
 .class-weight {
-background-image: url('../images/classes2.jpg');
+background-image: url('../images/classes2.webp');
 }
 .class-boxing {
-background-image: url('../images/classes3.jpg');
+background-image: url('../images/classes3.webp');
 }
 .classes h2 {
     font-family: 'Geologica', sans-serif;
@@ -545,7 +545,7 @@ background-image: url('../images/classes3.jpg');
     margin-top: 200px;
 }
 .testimonial-image {
-    background-image: url('../images/trainer1.png'); 
+    background-image: url('../images/trainer1.webp'); 
     background-size: cover;
     background-position: center;
     width: 250px;
@@ -592,7 +592,7 @@ background-image: url('../images/classes3.jpg');
     height: 60vw; 
     max-height: 600px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../images/gym.jpg');
+        url('../images/gym.webp');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;    
@@ -671,21 +671,21 @@ background-image: url('../images/classes3.jpg');
     border-radius: 10px;
 } 
 .trainer1 {
-    background-image: url('../images/trainer2.png');
+    background-image: url('../images/trainer2.webp');
     width: 516px;
     height: 516px;
     position: relative;
     left: -180px;
 }
 .trainer2 {
-    background-image: url('../images/trainer3.png');
+    background-image: url('../images/trainer3.webp');
     width: 560px;
     height: 526px;
     position: relative;
     left: -250px;
 }
 .trainer3 {
-    background-image: url('../images/trainer4.png');
+    background-image: url('../images/trainer4.webp');
     width: 516px;
     height: 516px;
     position: relative;
@@ -732,7 +732,7 @@ background-image: url('../images/classes3.jpg');
     width: 250px; 
     background-image: 
     linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), 
-    url('../images/muscles.jpg');
+    url('../images/muscles.webp');
     background-size: cover;
     background-position: center;
 }
@@ -1224,27 +1224,27 @@ background-image: url('../images/classes3.jpg');
     top: 150px;
 }
 .cardio {
-    background-image: url('../images/classes1.jpg');
+    background-image: url('../images/classes1.webp');
     width: 130px;
     height: 130px;
 }
 .weight-training {
-    background-image: url('../images/classes2.jpg');
+    background-image: url('../images/classes2.webp');
     width: 130px;
     height: 130px;
 }
 .crossfit {
-    background-image: url('../images/crossfit.jpg');
+    background-image: url('../images/crossfit.webp');
     width: 130px;
     height: 130px;
 }
 .boxing {
-    background-image: url('../images/classes3.jpg');
+    background-image: url('../images/classes3.webp');
     width: 130px;
     height: 130px;
 }
 .yoga {
-    background-image: url('../images/photo1.jpg');
+    background-image: url('../images/photo1.webp');
     width: 130px;
     height: 130px;
 }
@@ -1357,7 +1357,7 @@ thead {
     margin-top: -710px;
     width: 260px;
     height: 200px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/training.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/training.webp');
 }
 .info-content {
     text-align: center;
@@ -1427,7 +1427,7 @@ thead {
     max-width: 1296px;
     height: min(68vw, 680px); 
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../images/personal.jpg');
+        url('../images/personal.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;    
@@ -1442,7 +1442,7 @@ thead {
     max-width: 1296px;
     height: min(60vw, 600px); 
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../images/swim.jpg');
+        url('../images/swim.webp');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;    
@@ -1505,16 +1505,16 @@ thead {
     height: 84px;
 }
 .coach1 {
-    background-image: url('../images/trainer2.png');
+    background-image: url('../images/trainer2.webp');
     background-color: red;
 }
 .coach2 {
-    background-image: url('../images/trainer1.png');
+    background-image: url('../images/trainer1.webp');
     background-color: white;
     margin-top: -30px;
 }
 .coach3 {
-    background-image: url('../images/trainer5.png');
+    background-image: url('../images/trainer5.webp');
     background-position: top;
     background-color: white;
     margin-top: -30px;
@@ -1605,13 +1605,13 @@ thead {
   align-items: center;
 }
 .class-modern-equipment {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/modern.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/modern.webp');
 }
 .class-individual-approach {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/individual.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/individual.webp');
 }
 .class-expert-coaches {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/expert.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/expert.webp');
 }
 .swimming-content h2 {
     font-size: 30px;
@@ -1668,15 +1668,15 @@ thead {
     background-position: center;
 }
 .gallery-item1 {
-    background-image: url('../images/gallery1.jpg');
+    background-image: url('../images/gallery1.webp');
 }
 
 .gallery-item2 {
-    background-image: url('../images/gallery2.jpg');
+    background-image: url('../images/gallery2.webp');
 }
 
 .gallery-item3 {
-    background-image: url('../images/gallery3.jpg');
+    background-image: url('../images/gallery3.webp');
 }
 .team-section {
     margin-top: 30px;
@@ -1742,27 +1742,27 @@ thead {
     margin-bottom: 20px;
 }
 .trainer-one {
-    background-image: url('../images/trainer2.png');
+    background-image: url('../images/trainer2.webp');
     background-position: -90px;
 }
 .trainer-two {
-    background-image: url('../images/trainer3.png');
+    background-image: url('../images/trainer3.webp');
     background-position: -100px;
 }
 .trainer-three {
-    background-image: url('../images/trainer9.png');
+    background-image: url('../images/trainer9.webp');
     background-position: -100px;
 }
 .trainer-four {
-    background-image: url('../images/trainer6.png');
+    background-image: url('../images/trainer6.webp');
     background-position: -80px;
 }
 .trainer-five {
-    background-image: url('../images/trainer10.png');
+    background-image: url('../images/trainer10.webp');
     background-position: -120px;
 }
 .trainer-six {
-    background-image: url('../images/trainer4.png');
+    background-image: url('../images/trainer4.webp');
     background-position: -60px;
 }
 .social-icon {
@@ -1823,10 +1823,10 @@ thead {
     background-size: cover;
 }
 .new-york {
-background-image: url('../images/gym1.jpg');
+background-image: url('../images/gym1.webp');
 }
 .los-angeles {
-background-image: url('../images/losangeles.jpg');
+background-image: url('../images/losangeles.webp');
 }
 .contact-info {
     display: grid;
@@ -1915,10 +1915,10 @@ background-image: url('../images/losangeles.jpg');
     margin-top: 30px;
 }
 .image1 {
-    background-image: url('../images/photo1.jpg');
+    background-image: url('../images/photo1.webp');
 }
 .image2 {
-    background-image: url('../images/photo22.jpg');
+    background-image: url('../images/photo22.webp');
 }
 .blog-content {
     width: 306px; 
@@ -2392,14 +2392,14 @@ button.submit-btn:hover {
         border-radius: 10px;
     }
     .trainer-one-desktop {
-        background-image: url('../images/trainer2.png');
+        background-image: url('../images/trainer2.webp');
         width: 516px;
         height: 516px;
         position: relative;
         left: -210px;
     }
     .trainer-two-desktop {
-        background-image: url('../images/trainer3.png');
+        background-image: url('../images/trainer3.webp');
         width: 560px;
         height: 561px;
         position: relative;
@@ -2408,7 +2408,7 @@ button.submit-btn:hover {
         margin-top: -40px;
     }
     .trainer-three-desktop {
-        background-image: url('../images/trainer4.png');
+        background-image: url('../images/trainer4.webp');
         width: 516px;
         height: 516px;
         position: relative;
