@@ -170,7 +170,7 @@ html{
   top: 0;
   width: 70%;
 }
-[data-aos^=fade][data-aos^=fade].aos-animate {
+[data-aos^=fade][data-aos^=fade] {
     opacity: 1;
 }
 [data-aos] {
