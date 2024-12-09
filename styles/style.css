@@ -170,10 +170,6 @@ html{
   top: 0;
   width: 70%;
 }
-[data-aos^="fade"][data-aos^="fade"] {
-  opacity: 1;
-  transition-property: opacity,transform;
-}
 [data-aos] {
     transform: translate(0, 0);
 }
@@ -290,18 +286,17 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -200px;
-    margin-left: -100px;
-    max-width: 500px;
-    text-align: center;
-    height: 800px;
+    width: 100%; 
+    height: auto; 
 }
 .title2 h1,
 .title3 h1,
 .title4 h1 {
     font-size: 50px;
     font-weight: 600;
+    text-align: center;
     font-family: 'Geologica', sans-serif;
+    margin: 0;
 }
 .learn-more {
     position: relative;
@@ -592,7 +587,7 @@ background-image: url('../images/classes3.webp');
     height: 60vw; 
     max-height: 600px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../images/gym1.webp');
+        url('../images/gym.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;    
@@ -999,7 +994,6 @@ background-image: url('../images/classes3.webp');
     font-size: 20px;
     margin-bottom: 7px;
     text-align: left;
-    color: white;
 }
 .form-group input,
 .form-group textarea {
@@ -1989,79 +1983,96 @@ background-color: #e60000;
 color: #000;
 }
 .modal {
-    display: none;
+    display: none; 
     position: fixed;
-    top: 0;
+    z-index: 1000;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6); 
     justify-content: center;
     align-items: center;
-}
-.modal-content {
-    background-color: #fff;
-    color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    max-width: 450px;
+  }
+  .modal-content {
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: relative; 
-}
-.modal-content h2 {
-    color: #e74c3c;
+    max-width: 400px;
+    position: relative;
+    text-align: left;
+  }
+  .modal-content h2 {
     margin-bottom: 20px;
-    font-size: 24px;
+    color: #ff4d4d; 
     text-align: center;
-}
-label {
+  }
+  .modal-content label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     font-weight: bold;
-    color: #555;
-}
-input,
-select {
+    color: #ff4d4d; 
+  }
+  .modal-content input {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-bottom: 20px;
-    border: 2px solid #e74c3c;
-    border-radius: 6px;
-    background-color: #f9f9f9;
-    color: #333;
-    font-size: 16px;
-}
-input:focus,
-select:focus {
-    outline: none;
-    border-color: #e74c3c;
-    box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
-}
-button.submit-btn {
-    background-color: #e74c3c;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444; 
     color: #fff;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 18px;
+  }
+  .modal-content input::placeholder {
+    color: #aaa;
+  }
+  .submit-btn {
     width: 100%;
-    transition: background-color 0.3s ease;
-}
-button.submit-btn:hover {
-    background-color: #c0392b;
+    padding: 10px;
+    background-color: #ff4d4d;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+.submit-btn:hover {
+background-color: #cc0000; 
 }
 .close {
-    color: #e74c3c;
-    font-size: 28px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    background: none;
-    border: none;
+position: absolute;
+top: 10px;
+right: 10px;
+font-size: 20px;
+color: #ff4d4d; 
+cursor: pointer;
+} 
+.modal-content select {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #555;
+border-radius: 5px;
+background-color: #444;
+color: #fff;
+font-size: 14px;
+appearance: none;
+cursor: pointer;
+}
+.modal-content select option {
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+}
+.modal-content select:focus {
+    border-color: #ff4d4d;
+    outline: none;
+}
+.modal-content select:hover {
+    background-color: #555;
 }
 @media (min-width: 480px){
     .pricing-section{
@@ -2745,6 +2756,13 @@ button.submit-btn:hover {
 @media (min-width: 1920px) {
     .logo{
         margin-left: 200px;
+    }
+    .nav-links{
+        margin-right: 280px;
+    }
+    .autorathion{
+        position: relative;
+        left: -250px;
     }
     .timetable-section .logo{
         margin-left: 10px;
