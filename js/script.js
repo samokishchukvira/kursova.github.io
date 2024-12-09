@@ -195,6 +195,19 @@ arrowUp.addEventListener('click', (e) => {
         },
     });
 
+  if (!localStorage.getItem('splashSeen')) {
+    document.getElementById('splash-screen').style.display = 'flex';
+
+    setTimeout(function () {
+        document.getElementById('splash-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    }, 7000); 
+    
+    localStorage.setItem('splashSeen', 'true');
+} else {
+    document.getElementById('main-content').style.display = 'block';
+}
+
 // AOS.init();
 
 // if (window.innerWidth > 350) {  
