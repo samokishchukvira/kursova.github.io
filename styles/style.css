@@ -1300,6 +1300,9 @@ thead {
     left: 0;
     z-index: 2; 
 }
+.logo-cell span {
+    color: black;
+}
 .time-slot {
     background-color: #e50914;
     color: #fff;
