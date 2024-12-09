@@ -1447,6 +1447,9 @@ thead {
     -moz-position: sticky;      
     -ms-position: sticky; 
 }
+.logo-cell {
+    color: black;
+}
 .time-slot {
     background-color: #e50914;
     color: #fff;
