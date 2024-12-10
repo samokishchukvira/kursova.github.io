@@ -236,9 +236,9 @@ html{
 .nav-links a:hover::before {
     width: 100%;
 }
-[data-aos^=fade][data-aos^=fade] {
+/* [data-aos^=fade][data-aos^=fade] {
     opacity: 1;
-}
+} */
 [data-aos] {
     transform: translate(0, 0);
 }
