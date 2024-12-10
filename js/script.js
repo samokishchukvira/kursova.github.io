@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const videoSection = document.querySelector('.video-section');
         videoSection.innerHTML = `
           <a href="${data.link}" target="_blank">
-            <div class="play-button" data-aos="${data.animation.effect}" data-aos-duration="${data.animation.duration}"></div>
+            <div class="play-button"></div>
           </a>
         `;
       })
