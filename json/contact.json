@@ -1,29 +1,29 @@
 {
-  "title": "Feel Free to Contact Us",
+  "title": "Зв’яжіться з нами",
   "description": "Id vel aliquet proin id. Sodales ullamcorper commodo neque est elit.",
   "fields": [
     {
-      "label": "Your name",
+      "label": "Ваше ім'я",
       "type": "text",
       "id": "name",
       "placeholder": "Placeholder"
     },
     {
-      "label": "Your phone",
+      "label": "Ваш телефон",
       "type": "tel",
       "id": "phone",
       "placeholder": "Placeholder"
     },
     {
-      "label": "Your email",
+      "label": "Ваша пошта",
       "type": "email",
       "id": "email",
       "placeholder": "Placeholder"
     }
   ],
   "message": {
-    "label": "Your message",
+    "label": "Ваше повідомлення",
     "placeholder": "Placeholder"
   },
-  "button": "Send Message"
+  "button": "Надіслати повідомлення"
 }
