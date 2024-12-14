@@ -244,9 +244,6 @@ html{
 .nav-links a:hover::before {
     width: 100%;
 }
-/* [data-aos^=fade][data-aos^=fade] {
-    opacity: 1;
-} */
 [data-aos] {
     transform: translate(0, 0);
 }
@@ -364,7 +361,7 @@ html{
 }
 .title1 p {
     position: relative;
-    top: 30px;
+    top: 60px;
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
